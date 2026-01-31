@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Stefanov Herald</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="location">London, UK</div>
+    <div class="masthead">The Stefanov Herald</div>
+    <div class="menu-icon" id="menuIcon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+  <div class="page-content">
+
+
+      <div class="menu-backdrop" id="menuBackdrop"></div>
+
+      <div class="menu-overlay" id="menuOverlay">
+          <div class="menu-content">
+              <nav>
+                  <a href="#about" class="menu-link">About Me</a>
+                  <a href="#work" class="menu-link">My Work</a>
+                  <a href="#contact" class="menu-link">Contact Me</a>
+                  <a href="cv.pdf" target="_blank" class="menu-link">CV</a>
+              </nav>
+          </div>
+      </div>
+
+      <section class="hero-section" id="work">
+          <div class="center-column">
+              <h1><i>Featured work</i></h1>
+          </div>
+
+          <div class="featured-grid">
+              <div class="featured-item">
+                  <div class="featured-image">
+                    <img class="featured-image" src="/data/readingstar-team.JPG" alt="Readingstar Team">
+                    <span class="badge">New</span>
+                  </div>
+                  <div class="featured-content">
+                      <h3 class="featured-title">Readingstar 2.0 (+Ashley)</h3>
+                      <p class="featured-description">
+                          The team got to present our project at the 2026 Bett Conference on 22 January.
+                        <br> It was a great opportunity to showcase our progress and connect with professionals in the EdTech industry.
+                      </p>
+                  </div>
+              </div>
+
+              <div class="featured-item">
+                  <div class="featured-image" style="background: #56e5e5;">
+                      <img class="featured-image" src="/data/profili.jpg" alt="Profili">
+                  </div>
+                  <div class="featured-content">
+                      <h3 class="featured-title">Profili</h3>
+                      <p class="featured-description">
+                          A web application for generating optimal pipe-cutting instructions.
+                          This tool was developed to reduce industrial waste at ElektroLab, where
+                          it was successfully integrated and has been used in production since.
+                      </p>
+                  </div>
+              </div>
+
+              <div class="featured-item">
+                  <div class="featured-image" style="background: linear-gradient(135deg, #d4cfc4 0%, #b4afa4 100%);">
+                      <img class="featured-image" src="/data/yellow.png" alt="Yellow Pages">
+                  </div>
+                  <div class="featured-content">
+                      <h3 class="featured-title">UCL Yellow Pages</h3>
+                      <p class="featured-description">
+                        Built using the Django framework, it features a secure model hierarchy and email verification to ensure a private, student-only networking environment.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+      <section class="banner-section">
+          <div class="banner-text">
+              MARKO<br>STEFANOV
+          </div>
+      </section>
+
+      <section class="about-section" id="about">
+          <img class="about-image" src="/data/me.JPG">
+          <div class="about-content">
+              <h2>About</h2>
+              <p>
+                  Welcome to my portfolio. I'm a creative professional based in London,
+                  specialising software development, innovative problem-solving, and consulting.
+                  With years of coding experience, I've worked on diverse projects
+                  ranging from web applications, embedded systems, and Windows desktop applications.
+              </p>
+              <p>
+                  My approach combines technical excellence with creative vision, ensuring
+                  that every project not only meets but exceeds expectations. I believe in
+                  the power of good design to transform experiences and create meaningful
+                  connections.
+              </p>
+              <p>
+                  This portfolio showcases a selection of my recent work, highlighting the
+                  breadth and depth of my capabilities across different mediums and industries.
+              </p>
+          </div>
+      </section>
+
+    <section class="links-section" id="contact">
+      <div class="links-grid">
+        <a href="mailto:stefanov.marko420@gmail.com" class="link-item" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+
+        <a href="https://github.com/MarkoStefanov" class="link-item" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a href="https://linkedin.com/in/markostefanov" class="link-item" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a href="https://instagram.com/stefanovmarko_" class="link-item" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </section>
+
+      <footer>
+          <p>© 2026 Marko Stefanov. All rights reserved.</p>
+          <p>London, UK</p>
+      </footer>
+  </div>
+    <script>
+        const menuIcon = document.getElementById('menuIcon');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const menuBackdrop = document.getElementById('menuBackdrop');
+        const menuLinks = document.querySelectorAll('.menu-link');
+
+        // Toggle menu
+        menuIcon.addEventListener('click', () => {
+            menuIcon.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            menuBackdrop.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        menuLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const targetId = link.getAttribute('href');
+
+            // 1. Always close the menu regardless of what was clicked
+            menuIcon.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            menuBackdrop.classList.remove('active');
+
+            // 2. Only prevent default (and scroll) if it's an internal anchor link
+            if (targetId.startsWith('#')) {
+                e.preventDefault();
+
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    // Smooth scroll to section
+                    setTimeout(() => {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, 300);
+                }
+            }
+            // If it is NOT a '#' link (like cv.pdf), the browser will proceed to open it normally.
+        });
+    });
+    </script>
+</body>
+</html>
