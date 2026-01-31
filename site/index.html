@@ -3,480 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marko Stefanov - The Paper Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            background-color: #e8e4db;
-            color: #1a1a1a;
-            line-height: 1.6;
-        }
-
-        .header {
-            background-color: #d4cfc4;
-            border-bottom: 3px solid #1a1a1a;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .location {
-            font-size: 0.9rem;
-            font-style: italic;
-        }
-
-        .masthead {
-            font-family: 'Georgia', serif;
-            font-size: 1.8rem;
-            font-weight: normal;
-            letter-spacing: 2px;
-        }
-
-        .menu-icon {
-            width: 30px;
-            height: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            cursor: pointer;
-            position: relative;
-            z-index: 1002;
-        }
-
-        .menu-icon span {
-            width: 100%;
-            height: 2px;
-            background-color: #1a1a1a;
-            transition: all 0.3s ease;
-        }
-
-        .menu-icon.active span {
-            background-color: #e8e4db;
-        }
-
-        .menu-icon.active span:nth-child(1) {
-            transform: rotate(45deg) translate(7px, 7px);
-        }
-
-        .menu-icon.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-icon.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-        }
-
-        .menu-backdrop {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.6);
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.4s ease, visibility 0.4s ease;
-            z-index: 998;
-        }
-
-        .menu-backdrop.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .menu-overlay {
-            position: fixed;
-            top: 0;
-            right: -400px;
-            width: 400px;
-            height: 100vh;
-            background-color: #1a1a1a;
-            z-index: 999;
-            transition: right 0.4s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .menu-overlay.active {
-            right: 0;
-        }
-
-        .menu-content {
-            text-align: center;
-            padding: 40px;
-        }
-
-        .menu-content nav {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        .menu-content a {
-            color: #e8e4db;
-            text-decoration: none;
-            font-size: 1.8rem;
-            font-family: 'Georgia', serif;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
-            border-bottom: 2px solid transparent;
-            padding-bottom: 8px;
-        }
-
-        .menu-content a:hover {
-            color: #fff;
-            border-bottom-color: #e8e4db;
-        }
-
-        .hero-section {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 60px 40px;
-        }
-
-        .featured-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .featured-item {
-            background-color: #fff;
-            border: 1px solid #ccc;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .featured-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .featured-image {
-            width: 100%;
-            height: 200px;
-            background-color: #2a4a5a;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .featured-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #d4524d;
-            color: white;
-            padding: 3px 8px;
-            font-size: 0.7rem;
-            font-family: Arial, sans-serif;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        .featured-content {
-            padding: 20px;
-        }
-
-        .featured-title {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .featured-description {
-            font-size: 0.95rem;
-            color: #333;
-            line-height: 1.5;
-        }
-
-        .center-column {
-            text-align: center;
-            padding: 40px 20px;
-        }
-
-        .center-column h1 {
-            font-size: 3.5rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-            font-weight: normal;
-            line-height: 1.2;
-        }
-
-        .center-column .subtitle {
-            font-size: 1.3rem;
-            font-style: italic;
-            margin-bottom: 10px;
-            line-height: 1.4;
-        }
-
-        .center-column .tip {
-            font-size: 0.85rem;
-            margin-top: 20px;
-            color: #666;
-        }
-
-        .banner-section {
-            background-color: #1a1a1a;
-            color: #e8e4db;
-            padding: 80px 40px;
-            text-align: center;
-            margin-top: 40px;
-        }
-
-        .banner-text {
-            font-size: 6rem;
-            font-weight: bold;
-            letter-spacing: 8px;
-            text-transform: uppercase;
-            line-height: 0.9;
-        }
-
-        .about-section {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 60px 40px;
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 40px;
-        }
-
-        .about-image {
-            background-color: #c9b4a0;
-            height: 400px;
-            position: relative;
-        }
-
-        .about-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .about-content p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-
-        .links-section {
-            background-color: #d4cfc4;
-            padding: 40px;
-            margin-top: 30px;
-            border-top: 2px solid #1a1a1a;
-            border-bottom: 2px solid #1a1a1a;
-        }
-
-        .links-grid {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .link-item {
-            text-decoration: none;
-            color: #1a1a1a;
-            font-size: 1.1rem;
-            padding: 12px 30px;
-            border: 2px solid #1a1a1a;
-            background-color: #e8e4db;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            font-family: Arial, sans-serif;
-            font-weight: bold;
-        }
-
-        .link-item:hover {
-            background-color: #1a1a1a;
-            color: #e8e4db;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px;
-            font-size: 0.9rem;
-            color: #666;
-            border-top: 1px solid #ccc;
-        }
-
-        @media (max-width: 900px) {
-            .featured-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .about-section {
-                grid-template-columns: 1fr;
-            }
-
-            .banner-text {
-                font-size: 3rem;
-            }
-
-            .center-column h1 {
-                font-size: 2rem;
-            }
-
-            .menu-overlay {
-                width: 100%;
-                right: -100%;
-            }
-
-            .menu-content a {
-                font-size: 1.5rem;
-            }
-
-            .header {
-                padding: 15px 20px;
-            }
-
-            .masthead {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
+    <title>The Stefanov Herald</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header">
-        <div class="location">London, UK</div>
-        <div class="masthead">The Stefanov Herald</div>
-        <div class="menu-icon" id="menuIcon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </header>
-
-    <div class="menu-backdrop" id="menuBackdrop"></div>
-
-    <div class="menu-overlay" id="menuOverlay">
-        <div class="menu-content">
-            <nav>
-                <a href="#about" class="menu-link">About Me</a>
-                <a href="#work" class="menu-link">My Work</a>
-                <a href="#contact" class="menu-link">Contact Me</a>
-            </nav>
-        </div>
+  <header class="header">
+    <div class="location">London, UK</div>
+    <div class="masthead">The Stefanov Herald</div>
+    <div class="menu-icon" id="menuIcon">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+  </header>
+  <div class="page-content">
 
-    <section class="hero-section" id="work">
-        <div class="center-column">
-            <h1>All Work!</h1>
-            <div class="subtitle">
-                A Featured selection<br>
-                the latest work—<br>
-                of the last years.
-            </div>
-        </div>
 
-        <div class="featured-grid">
-            <div class="featured-item">
-                <div class="featured-image" style="background: linear-gradient(135deg, #2a4a5a 0%, #1a2a3a 100%);">
+      <div class="menu-backdrop" id="menuBackdrop"></div>
+
+      <div class="menu-overlay" id="menuOverlay">
+          <div class="menu-content">
+              <nav>
+                  <a href="#about" class="menu-link">About Me</a>
+                  <a href="#work" class="menu-link">My Work</a>
+                  <a href="#contact" class="menu-link">Contact Me</a>
+              </nav>
+          </div>
+      </div>
+
+      <section class="hero-section" id="work">
+          <div class="center-column">
+              <h1><i>Featured work</i></h1>
+          </div>
+
+          <div class="featured-grid">
+              <div class="featured-item">
+                  <div class="featured-image">
+                    <img class="featured-image" src="/data/readingstar-team.JPG" alt="Readingstar Team">
                     <span class="badge">New</span>
-                </div>
-                <div class="featured-content">
-                    <h3 class="featured-title">Featured Project</h3>
-                    <p class="featured-description">
-                        An award-winning design project showcasing innovative solutions
-                        and creative excellence in modern web development.
-                    </p>
-                </div>
-            </div>
+                  </div>
+                  <div class="featured-content">
+                      <h3 class="featured-title">Readingstar 2.0 (+Ashley)</h3>
+                      <p class="featured-description">
+                          The team got to present our project at the 2026 Bett Conference on 22 January.
+                        <br> It was a great opportunity to showcase our progress and connect with professionals in the EdTech industry.
+                      </p>
+                  </div>
+              </div>
 
-            <div class="featured-item">
-                <div class="featured-image" style="background: linear-gradient(135deg, #c9b4a0 0%, #a89080 100%);">
-                    <span class="badge">New</span>
-                </div>
-                <div class="featured-content">
-                    <h3 class="featured-title">Latest Work</h3>
-                    <p class="featured-description">
-                        A comprehensive portfolio piece demonstrating technical expertise
-                        and attention to detail in every aspect of design.
-                    </p>
-                </div>
-            </div>
+              <div class="featured-item">
+                  <div class="featured-image" style="background: #56e5e5;">
+                      <img class="featured-image" src="/data/profili.jpg" alt="Profili">
+                  </div>
+                  <div class="featured-content">
+                      <h3 class="featured-title">Profili</h3>
+                      <p class="featured-description">
+                          A web application for generating optimal pipe-cutting instructions.
+                          This tool was developed to reduce industrial waste at ElektroLab, where
+                          it was successfully integrated and has been used in production since.
+                      </p>
+                  </div>
+              </div>
 
-            <div class="featured-item">
-                <div class="featured-image" style="background: linear-gradient(135deg, #d4cfc4 0%, #b4afa4 100%);">
-                    <span class="badge">New</span>
-                </div>
-                <div class="featured-content">
-                    <h3 class="featured-title">Recent Project</h3>
-                    <p class="featured-description">
-                        An immersive experience showcasing collaboration and innovative
-                        thinking in contemporary digital design.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+              <div class="featured-item">
+                  <div class="featured-image" style="background: linear-gradient(135deg, #d4cfc4 0%, #b4afa4 100%);">
+                      <img class="featured-image" src="/data/yellow.png" alt="Yellow Pages">
+                  </div>
+                  <div class="featured-content">
+                      <h3 class="featured-title">UCL Yellow Pages</h3>
+                      <p class="featured-description">
+                        Built using the Django framework, it features a secure model hierarchy and email verification to ensure a private, student-only networking environment.
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </section>
 
-    <section class="banner-section">
-        <div class="banner-text">
-            MARKO<br>STEFANOV
-        </div>
-    </section>
+      <section class="banner-section">
+          <div class="banner-text">
+              MARKO<br>STEFANOV
+          </div>
+      </section>
 
-    <section class="about-section" id="about">
-        <div class="about-image"></img href="data/"></div>
-        <div class="about-content">
-            <h2>About</h2>
-            <p>
-                Welcome to my portfolio. I'm a creative professional based in London,
-                specialising software development, innovative problem-solving, and consulting.
-                With years of coding experience, I've worked on diverse projects
-                ranging from web applications, embedded systems, and Windows desktop applications.
-            </p>
-            <p>
-                My approach combines technical excellence with creative vision, ensuring
-                that every project not only meets but exceeds expectations. I believe in
-                the power of good design to transform experiences and create meaningful
-                connections.
-            </p>
-            <p>
-                This portfolio showcases a selection of my recent work, highlighting the
-                breadth and depth of my capabilities across different mediums and industries.
-            </p>
-        </div>
-    </section>
+      <section class="about-section" id="about">
+          <img class="about-image" src="/data/me.JPG">
+          <div class="about-content">
+              <h2>About</h2>
+              <p>
+                  Welcome to my portfolio. I'm a creative professional based in London,
+                  specialising software development, innovative problem-solving, and consulting.
+                  With years of coding experience, I've worked on diverse projects
+                  ranging from web applications, embedded systems, and Windows desktop applications.
+              </p>
+              <p>
+                  My approach combines technical excellence with creative vision, ensuring
+                  that every project not only meets but exceeds expectations. I believe in
+                  the power of good design to transform experiences and create meaningful
+                  connections.
+              </p>
+              <p>
+                  This portfolio showcases a selection of my recent work, highlighting the
+                  breadth and depth of my capabilities across different mediums and industries.
+              </p>
+          </div>
+      </section>
 
-    <section class="links-section" id="contact">
-        <div class="links-grid">
-            <a href="mailto:stefanov.marko420@gmail.com" class="link-item">Email</a>
-            <a href="https://github.com/MarkoStefanov" class="link-item" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/markostefanov" class="link-item" target="_blank">LinkedIn</a>
-            <a href="https://instagram.com/stefanovmarko_" class="link-item" target="_blank">Instagram</a>
-        </div>
-    </section>
+      <section class="links-section" id="contact">
+          <div class="links-grid">
+              <a href="mailto:stefanov.marko420@gmail.com" class="link-item">Email</a>
+              <a href="https://github.com/MarkoStefanov" class="link-item" target="_blank">GitHub</a>
+              <a href="https://linkedin.com/in/markostefanov" class="link-item" target="_blank">LinkedIn</a>
+              <a href="https://instagram.com/stefanovmarko_" class="link-item" target="_blank">Instagram</a>
+          </div>
+      </section>
 
-    <footer>
-        <p>© 2026 Marko Stefanov. All rights reserved.</p>
-        <p>London, UK</p>
-    </footer>
-
+      <footer>
+          <p>© 2026 Marko Stefanov. All rights reserved.</p>
+          <p>London, UK</p>
+      </footer>
+  </div>
     <script>
         const menuIcon = document.getElementById('menuIcon');
         const menuOverlay = document.getElementById('menuOverlay');
@@ -504,7 +149,7 @@
 
                 // Smooth scroll to section
                 setTimeout(() => {
-                    targetSection.scrollIntoView({ 
+                    targetSection.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
                     });
