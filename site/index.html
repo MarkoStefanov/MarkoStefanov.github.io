@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Stefanov Herald</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <header class="header">
@@ -27,6 +28,7 @@
                   <a href="#about" class="menu-link">About Me</a>
                   <a href="#work" class="menu-link">My Work</a>
                   <a href="#contact" class="menu-link">Contact Me</a>
+                  <a href="cv.pdf" target="_blank" class="menu-link">CV</a>
               </nav>
           </div>
       </div>
@@ -108,14 +110,25 @@
           </div>
       </section>
 
-      <section class="links-section" id="contact">
-          <div class="links-grid">
-              <a href="mailto:stefanov.marko420@gmail.com" class="link-item">Email</a>
-              <a href="https://github.com/MarkoStefanov" class="link-item" target="_blank">GitHub</a>
-              <a href="https://linkedin.com/in/markostefanov" class="link-item" target="_blank">LinkedIn</a>
-              <a href="https://instagram.com/stefanovmarko_" class="link-item" target="_blank">Instagram</a>
-          </div>
-      </section>
+    <section class="links-section" id="contact">
+      <div class="links-grid">
+        <a href="mailto:stefanov.marko420@gmail.com" class="link-item" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+
+        <a href="https://github.com/MarkoStefanov" class="link-item" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a href="https://linkedin.com/in/markostefanov" class="link-item" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+
+        <a href="https://instagram.com/stefanovmarko_" class="link-item" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </section>
 
       <footer>
           <p>© 2026 Marko Stefanov. All rights reserved.</p>
@@ -137,32 +150,32 @@
 
         // Close menu when clicking on a link
         menuLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
+        link.addEventListener('click', (e) => {
+            const targetId = link.getAttribute('href');
 
-                // Close menu
-                menuIcon.classList.remove('active');
-                menuOverlay.classList.remove('active');
-                menuBackdrop.classList.remove('active');
-
-                // Smooth scroll to section
-                setTimeout(() => {
-                    targetSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }, 300);
-            });
-        });
-
-        // Close menu when clicking on backdrop
-        menuBackdrop.addEventListener('click', () => {
+            // 1. Always close the menu regardless of what was clicked
             menuIcon.classList.remove('active');
             menuOverlay.classList.remove('active');
             menuBackdrop.classList.remove('active');
+
+            // 2. Only prevent default (and scroll) if it's an internal anchor link
+            if (targetId.startsWith('#')) {
+                e.preventDefault();
+
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    // Smooth scroll to section
+                    setTimeout(() => {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, 300);
+                }
+            }
+            // If it is NOT a '#' link (like cv.pdf), the browser will proceed to open it normally.
         });
+    });
     </script>
 </body>
 </html>
