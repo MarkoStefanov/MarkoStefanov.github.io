@@ -1,2 +1,2 @@
-# markostefanov.com
+# markostefanov.github.io
 Personal Webpage
