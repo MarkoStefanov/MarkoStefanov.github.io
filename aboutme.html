@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - The Stefanov Herald</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header class="header">
+  <div class="location">London, UK</div>
+  <div class="masthead">The Stefanov Herald</div>
+  <div class="menu-icon" id="menuIcon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+<div class="page-content">
+
+  <div class="menu-backdrop" id="menuBackdrop"></div>
+
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-content">
+      <nav>
+        <a href="index.html" class="menu-link">Home</a>
+        <a href="about.html" class="menu-link">About Me</a>
+        <a href="projects.html" class="menu-link">Projects</a>
+        <a href="contact.html" class="menu-link">Contact Me</a>
+        <a href="data/cv.pdf" target="_blank" class="menu-link">CV</a>
+      </nav>
+    </div>
+  </div>
+
+  <section class="center-column">
+    <h1>ABOUT ME</h1>
+    <p class="subtitle">Getting to know Marko Stefanov</p>
+  </section>
+
+  <section class="about-section">
+    <img class="about-image" src="/data/me.JPG" alt="Marko Stefanov">
+    <div class="about-content">
+      <h2>Background</h2>
+      <p>
+        Welcome to my portfolio. I'm a creative professional based in London,
+        specialising software development, innovative problem-solving, and consulting.
+        With years of coding experience, I've worked on diverse projects
+        ranging from web applications, embedded systems, and Windows desktop applications.
+      </p>
+      <p>
+        My approach combines technical excellence with creative vision, ensuring
+        that every project not only meets but exceeds expectations. I believe in
+        the power of good design to transform experiences and create meaningful
+        connections.
+      </p>
+      <p>
+        This portfolio showcases a selection of my recent work, highlighting the
+        breadth and depth of my capabilities across different mediums and industries.
+      </p>
+    </div>
+  </section>
+
+  <section class="banner-section">
+    <div class="banner-text">
+      SOFTWARE<br>DEVELOPER
+    </div>
+  </section>
+
+  <section class="hero-section">
+    <div class="center-column">
+      <h1><i>Skills & Experience</i></h1>
+    </div>
+
+    <div class="featured-grid">
+      <div class="featured-item">
+        <div class="featured-image" style="background: linear-gradient(135deg, #2a4a5a 0%, #1a3a4a 100%);">
+        </div>
+        <div class="featured-content">
+          <h3 class="featured-title">Web Development</h3>
+          <p class="featured-description">
+            Expert in building responsive, user-friendly web applications using modern frameworks
+            and technologies. Proficient in Django, HTML, CSS, and JavaScript.
+          </p>
+        </div>
+      </div>
+
+      <div class="featured-item">
+        <div class="featured-image" style="background: linear-gradient(135deg, #56e5e5 0%, #36c5c5 100%);">
+        </div>
+        <div class="featured-content">
+          <h3 class="featured-title">Problem Solving</h3>
+          <p class="featured-description">
+            Passionate about tackling complex challenges with innovative solutions.
+            Experience in optimizing processes and reducing waste in industrial settings.
+          </p>
+        </div>
+      </div>
+
+      <div class="featured-item">
+        <div class="featured-image" style="background: linear-gradient(135deg, #d4cfc4 0%, #b4afa4 100%);">
+        </div>
+        <div class="featured-content">
+          <h3 class="featured-title">Team Collaboration</h3>
+          <p class="featured-description">
+            Strong communicator and team player. Experience presenting at industry conferences
+            and working in collaborative development environments.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Marko Stefanov. All rights reserved.</p>
+    <p>London, UK</p>
+  </footer>
+</div>
+
+<script>
+  const menuIcon = document.getElementById('menuIcon');
+  const menuOverlay = document.getElementById('menuOverlay');
+  const menuBackdrop = document.getElementById('menuBackdrop');
+  const menuLinks = document.querySelectorAll('.menu-link');
+
+  menuIcon.addEventListener('click', () => {
+      menuIcon.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+      menuBackdrop.classList.toggle('active');
+  });
+
+  menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+          menuIcon.classList.remove('active');
+          menuOverlay.classList.remove('active');
+          menuBackdrop.classList.remove('active');
+      });
+  });
+
+  menuBackdrop.addEventListener('click', () => {
+      menuIcon.classList.remove('active');
+      menuOverlay.classList.remove('active');
+      menuBackdrop.classList.remove('active');
+  });
+</script>
+</body>
+</html>

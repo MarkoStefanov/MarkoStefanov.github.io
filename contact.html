@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me - The Stefanov Herald</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header class="header">
+  <div class="location">London, UK</div>
+  <div class="masthead">The Stefanov Herald</div>
+  <div class="menu-icon" id="menuIcon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+<div class="page-content">
+
+  <div class="menu-backdrop" id="menuBackdrop"></div>
+
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-content">
+      <nav>
+        <a href="index.html" class="menu-link">Home</a>
+        <a href="aboutme.html" class="menu-link">About Me</a>
+        <a href="projects.html" class="menu-link">Projects</a>
+        <a href="contact.html" class="menu-link">Contact Me</a>
+        <a href="data/cv.pdf" target="_blank" class="menu-link">CV</a>
+      </nav>
+    </div>
+  </div>
+
+  <section class="linktree-section">
+    <div class="linktree-container">
+      <div class="linktree-profile">
+        <img src="/data/me.JPG" alt="Marko Stefanov" class="linktree-avatar">
+        <h1 class="linktree-name">Marko Stefanov</h1>
+        <p class="linktree-bio">Software Developer | Problem Solver | Based in London</p>
+      </div>
+
+      <div class="linktree-links">
+        <a href="mailto:stefanov.marko420@gmail.com" class="linktree-button">
+          <i class="fas fa-envelope"></i>
+          <span>Email Me</span>
+        </a>
+
+        <a href="https://linkedin.com/in/markostefanov" target="_blank" class="linktree-button">
+          <i class="fab fa-linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
+
+        <a href="https://github.com/MarkoStefanov" target="_blank" class="linktree-button">
+          <i class="fab fa-github"></i>
+          <span>GitHub</span>
+        </a>
+
+        <a href="https://instagram.com/stefanovmarko_" target="_blank" class="linktree-button">
+          <i class="fab fa-instagram"></i>
+          <span>Instagram</span>
+        </a>
+
+        <a href="data/cv.pdf" target="_blank" class="linktree-button">
+          <i class="fas fa-file-pdf"></i>
+          <span>CV</span>
+        </a>
+      </div>
+
+      <div class="linktree-footer">
+        <p>© 2026 Marko Stefanov</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  const menuIcon = document.getElementById('menuIcon');
+  const menuOverlay = document.getElementById('menuOverlay');
+  const menuBackdrop = document.getElementById('menuBackdrop');
+  const menuLinks = document.querySelectorAll('.menu-link');
+
+  menuIcon.addEventListener('click', () => {
+      menuIcon.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+      menuBackdrop.classList.toggle('active');
+  });
+
+  menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+          menuIcon.classList.remove('active');
+          menuOverlay.classList.remove('active');
+          menuBackdrop.classList.remove('active');
+      });
+  });
+
+  menuBackdrop.addEventListener('click', () => {
+      menuIcon.classList.remove('active');
+      menuOverlay.classList.remove('active');
+      menuBackdrop.classList.remove('active');
+  });
+</script>
+</body>
+</html>
