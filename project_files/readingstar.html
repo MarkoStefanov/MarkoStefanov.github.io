@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReadingStar 2.0 - The Stefanov Herald</title>
+  <link rel="stylesheet" href="/./style.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header class="header">
+  <div class="location">London, UK</div>
+  <div class="masthead">The Stefanov Herald</div>
+  <div class="menu-icon" id="menuIcon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+<div class="page-content">
+
+  <div class="menu-backdrop" id="menuBackdrop"></div>
+
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-content">
+      <nav>
+        <a href="index.html" class="menu-link">Home</a>
+        <a href="aboutme.html" class="menu-link">About Me</a>
+        <a href="projects.html" class="menu-link">Projects</a>
+        <a href="contact.html" class="menu-link">Contact Me</a>
+        <a href="data/cv.pdf" target="_blank" class="menu-link">CV</a>
+      </nav>
+    </div>
+  </div>
+
+  <section class="center-column">
+    <h1>ReadingStar 2.0</h1>
+    <p class="subtitle">Helping children find their voice.</p>
+  </section>
+
+  <section class="about-content"
+           style="max-width: 900px; margin: 0 auto; padding: 20px 40px 60px 40px;">
+
+    <h2>Overview</h2>
+    <p>
+      A closed-source project developed at UCL in collaboration with IBM, Intel, and the National
+      Autistic Society. ReadingStar 2.0 is an application designed to support children with autism
+      in developing their communication skills by encouraging them to sing along to AI-generated
+      songs based on their interests and preferences. The project aims to create a
+      fun and engaging way for children to practice vocalisation and improve their speech
+      abilities. Everything the application does is done locally on the user's device, ensuring
+      privacy and security for the children using it, as well as providing an offline experience
+      that can be used on old and low-spec devices, making it accessible to a wider audience.
+    </p>
+
+    <img src="/data/readingstar.png" alt="ReadingStar Overview"
+         style="width: 100%; height: auto; border: 3px solid #1a1a1a; margin: 20px 0 40px 0; object-fit: cover;">
+
+    <h2>The Solution</h2>
+    <p>
+      We approached this problem by using IBM's Granite AI model to generate lyrics, Meta's
+      MusicGen to create music, and packaged everything into a clean and user-friendly application
+      built with Electron. This approach came with its challenges, such as optimising AI models to
+      perform better on low-spec devices, beat matching, scoring the user's singing, all while
+      ensuring that the application is accessible and enjoyable for children with autism. That's
+      where our collaboration with the National Autistic Society was crucial, as they provided us
+      with invaluable insights and feedback to ensure that our solution truly meets the needs of
+      our target users.
+    </p>
+    <p>
+      I was responsible for the music generation, audio-utility functions, and the scoring system.
+      <a href="https://rorybyrne.com" style="color: #1a1a1a; font-weight: bold;">Rory Byrne</a>
+      built the frontend and plugged all our
+      subsystems together.
+      <a href="https://dorukersoy.com" style="color: #1a1a1a; font-weight: bold;">Doruk Ersoy</a>
+      worked on the lyric generation and the
+      structure of the backend.
+      Sinan Sensurucu designed the beat-matching algorithm, tying the outputs from both models
+      together and ensuring that the generated music and lyrics are in sync. As team leader, he
+      also handled the business end of things.
+    </p>
+
+    <img src="/data/my-songs.jpeg" alt="The ReadingStar Team"
+         style="width: 100%; height: auto; border: 3px solid #1a1a1a; margin: 20px 0 40px 0; object-fit: cover;">
+
+    <h2>Additional Details</h2>
+    <ul style="font-size: 1.1rem; margin-bottom: 20px; padding-left: 20px; line-height: 1.6; text-align: justify;">
+      <li style="margin-bottom: 10px;"><b>Biggest Milestone:</b> presenting our project at the BETT
+        conference on 22 January
+        2026.
+      </li>
+      <li style="margin-bottom: 10px;"><b>Currently working on:</b> packaging.</li>
+      <li style="margin-bottom: 10px;"><b>Gratitude to:</b> our collaborators mentioned above,
+        Professor Dean Mohamedally, and
+        our TAs Ashley Tam and Yusuf Afifi.
+      </li>
+    </ul>
+
+    <img src="/data/readingstar-team.JPG" alt="Additional Details"
+         style="width: 100%; height: auto; border: 3px solid #1a1a1a; margin: 20px 0 20px 0; object-fit: cover;">
+
+  </section>
+
+  <section class="banner-section">
+    <div class="banner-text">
+      IMPACTFUL<br>SOLUTIONS
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Marko Stefanov. All rights reserved.</p>
+    <p>London, UK</p>
+  </footer>
+</div>
+
+<script>
+  const menuIcon = document.getElementById('menuIcon');
+  const menuOverlay = document.getElementById('menuOverlay');
+  const menuBackdrop = document.getElementById('menuBackdrop');
+  const menuLinks = document.querySelectorAll('.menu-link');
+
+  menuIcon.addEventListener('click', () => {
+      menuIcon.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+      menuBackdrop.classList.toggle('active');
+  });
+
+  menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+          menuIcon.classList.remove('active');
+          menuOverlay.classList.remove('active');
+          menuBackdrop.classList.remove('active');
+      });
+  });
+
+  menuBackdrop.addEventListener('click', () => {
+      menuIcon.classList.remove('active');
+      menuOverlay.classList.remove('active');
+      menuBackdrop.classList.remove('active');
+  });
+</script>
+</body>
+</html>
