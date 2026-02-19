@@ -31,6 +31,11 @@ body {
     min-height: 100vh;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .page-content {
     background-color: #e8e4db;
     max-width: 1202px;

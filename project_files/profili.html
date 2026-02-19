@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Project Name] - The Stefanov Herald</title>
+  <link rel="stylesheet" href="/./style.css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<header class="header">
+  <div class="location">London, UK</div>
+  <div class="masthead">The Stefanov Herald</div>
+  <div class="menu-icon" id="menuIcon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+<div class="page-content">
+
+  <div class="menu-backdrop" id="menuBackdrop"></div>
+
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-content">
+      <nav>
+        <a href="/./index.html" class="menu-link">Home</a>
+        <a href="/./aboutme.html" class="menu-link">About Me</a>
+        <a href="/./projects.html" class="menu-link">Projects</a>
+        <a href="/./contact.html" class="menu-link">Contact Me</a>
+        <a href="/./data/cv.pdf" target="_blank" class="menu-link">CV</a>
+      </nav>
+    </div>
+  </div>
+
+  <section class="center-column">
+    <h1>Profili</h1>
+    <p class="subtitle">Reducing Industrial Waste</p>
+  </section>
+
+  <section class="about-content"
+           style="max-width: 900px; margin: 0 auto; padding: 20px 40px 60px 40px;">
+    <h2>Overview</h2>
+    <p>
+      Profili is a web application designed to help companies reduce industrial waste by providing
+      optimal pipe cutting instructions. The user inputs the dimensions of the pipes and the
+      required cuts, and Profili outputs the most efficient cutting plan, minimising waste and
+      maximising material usage*. The application has been successfully deployed at ElektroLab,
+      where it has been in use for over a year.
+    </p>
+
+    <h2>The Solution</h2>
+    <p>
+      This is achieved by using the column generation algorithm, an optimisation technique used to
+      solve the cutting stock problem by dynamically generating cutting patterns rather than
+      evaluating all exponentially many possibilities at once. This was all packaged into a
+      frontend that adhered to the stakeholders' requirements and constraints using Django and
+      JavaScript.
+    </p>
+
+    <h2>Additional Details</h2>
+    <p>
+      * Cutting stock problem is an NP-hard problem, so while this solution is not <i>exactly</i>
+      optimal, it is a very good approximation that can be computed in a reasonable time frame for
+      real-world use cases.
+      <br><br>
+      <b>Current goal:</b> clean up the codebase, implement proper packaging and deployment and
+      publish it on GitHub.
+    </p>
+
+  </section>
+
+  <section class="banner-section">
+    <div class="banner-text">
+      IMPACTFUL<br>SOLUTIONS
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Marko Stefanov. All rights reserved.</p>
+    <p>London, UK</p>
+  </footer>
+</div>
+
+<script>
+  const menuIcon = document.getElementById('menuIcon');
+  const menuOverlay = document.getElementById('menuOverlay');
+  const menuBackdrop = document.getElementById('menuBackdrop');
+  const menuLinks = document.querySelectorAll('.menu-link');
+
+  menuIcon.addEventListener('click', () => {
+      menuIcon.classList.toggle('active');
+      menuOverlay.classList.toggle('active');
+      menuBackdrop.classList.toggle('active');
+  });
+
+  menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+          menuIcon.classList.remove('active');
+          menuOverlay.classList.remove('active');
+          menuBackdrop.classList.remove('active');
+      });
+  });
+
+  menuBackdrop.addEventListener('click', () => {
+      menuIcon.classList.remove('active');
+      menuOverlay.classList.remove('active');
+      menuBackdrop.classList.remove('active');
+  });
+</script>
+</body>
+</html>
