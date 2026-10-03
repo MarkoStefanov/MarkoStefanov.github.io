@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Me · The Stefanov Herald</title>
-  <meta name="description" content="Background, skills and experience of Marko Stefanov, a software developer and UCL Computer Science student in London.">
+  <meta name="description" content="Background, milestones, skills and toolkit of Marko Stefanov, a software developer and UCL Computer Science student in London.">
   <meta name="author" content="Marko Stefanov">
   <link rel="canonical" href="https://markostefanov.com/aboutme.html">
   <meta name="theme-color" content="#f4f0e6" media="(prefers-color-scheme: light)">
@@ -13,7 +13,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="The Stefanov Herald">
   <meta property="og:title" content="About Me · The Stefanov Herald">
-  <meta property="og:description" content="Background, skills and experience of Marko Stefanov, a software developer and UCL Computer Science student in London.">
+  <meta property="og:description" content="Background, milestones, skills and toolkit of Marko Stefanov, a software developer and UCL Computer Science student in London.">
   <meta property="og:url" content="https://markostefanov.com/aboutme.html">
   <meta property="og:image" content="https://markostefanov.com/data/marko-stefanov.jpg">
   <meta name="twitter:card" content="summary_large_image">
@@ -68,17 +68,32 @@
 </header>
 
 <main id="main">
-  <section class="container page-head">
-    <span class="kicker">Profile</span>
-    <h1>About Me</h1>
-    <p class="deck">Getting to know Marko Stefanov.</p>
+  <section class="container profile-hero">
+    <div>
+      <span class="kicker">Profile</span>
+      <h1>Marko Stefanov</h1>
+      <p class="deck">Computer Science student at UCL and software developer in London, building
+        tools that solve real problems.</p>
+      <ul class="profile-facts">
+        <li><i class="fas fa-location-dot" aria-hidden="true"></i> London, UK</li>
+        <li><i class="fas fa-graduation-cap" aria-hidden="true"></i> UCL Computer Science</li>
+        <li><i class="fas fa-industry" aria-hidden="true"></i> Software in production</li>
+      </ul>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="data/cv.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf" aria-hidden="true"></i> Download CV</a>
+        <a class="btn btn-ghost" href="mailto:stefanov.marko420@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> Email me</a>
+      </div>
+    </div>
+    <figure class="profile-photo">
+      <img src="data/marko-stefanov.jpg" alt="Marko Stefanov in the City of London, with the Gherkin behind him" width="741" height="758" fetchpriority="high">
+    </figure>
   </section>
 
-  <section class="container section flush-top" aria-label="Background">
-    <div class="about">
-      <figure class="about-figure">
-        <img src="data/marko-stefanov.jpg" alt="Marko Stefanov" width="741" height="758" fetchpriority="high">
-      </figure>
+  <section class="container section flush-top" aria-labelledby="brief-title">
+    <div class="section-head">
+      <h2 id="brief-title">In Brief</h2>
+    </div>
+    <div class="about about-home">
       <div class="prose">
           <p>
             Based in London, I&rsquo;m a Computer Science student at UCL. I like building software
@@ -94,53 +109,114 @@
           </p>
           <p>
             I enjoy working in teams with real stakeholders. ReadingStar was built with IBM, Intel
-            and the National Autistic Society, and presenting it to the EdTech industry at
-            Bett&nbsp;2026 was a highlight. Profili went from a problem on a factory floor to a
-            tool used every day.
-          </p>
-          <p>
-            I&rsquo;m always open to interesting projects and opportunities. The best way to reach
-            me is <a href="mailto:stefanov.marko420@gmail.com">by email</a>, or you can grab my
-            <a href="data/cv.pdf" target="_blank" rel="noopener">CV</a>.
+            and the National Autistic Society, and Profili went from a problem on a factory floor
+            to a tool used every day.
           </p>
       </div>
+      <aside class="glance" aria-label="At a glance">
+        <h3>At a glance</h3>
+        <dl>
+          <div><dt>Based in</dt><dd>London, UK</dd></div>
+          <div><dt>Studying</dt><dd>Computer Science at UCL</dd></div>
+          <div><dt>Focus</dt><dd>Web, optimisation &amp; on-device AI</dd></div>
+          <div><dt>Open to</dt><dd>Interesting projects &amp; opportunities</dd></div>
+        </dl>
+        <a class="btn btn-ghost" href="contact.html">Get in touch</a>
+      </aside>
     </div>
   </section>
 
-  <section class="banner" aria-hidden="true">
-    <div class="banner-text">Software<br>Developer</div>
-  </section>
-
-  <section class="container section" aria-labelledby="skills-title">
+  <section class="container section flush-top" aria-labelledby="ms-title">
     <div class="section-head">
-      <h2 id="skills-title">Skills &amp; Experience</h2>
+      <h2 id="ms-title">Milestones</h2>
+      <a class="more" href="projects.html">All projects <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
     </div>
-    <div class="skill-grid">
-      <article class="skill">
-        <i class="fas fa-code" aria-hidden="true"></i>
+    <ol class="milestones">
+      <li>
+        <span class="ms-when">Jan 2026</span>
+        <div>
+          <h3><a href="project_files/readingstar.html">Presented ReadingStar&nbsp;2.0 at Bett</a></h3>
+          <p>Showcased our app to the EdTech industry at the Bett conference in London.</p>
+        </div>
+        <span class="ms-arrow" aria-hidden="true"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+      </li>
+      <li>
+        <span class="ms-when">In production</span>
+        <div>
+          <h3><a href="project_files/profili.html">Profili deployed at ElektroLab</a></h3>
+          <p>My pipe-cutting optimiser has been in daily use on the shop floor for over a year.</p>
+        </div>
+        <span class="ms-arrow" aria-hidden="true"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+      </li>
+      <li>
+        <span class="ms-when">Team project</span>
+        <div>
+          <h3><a href="project_files/readingstar.html">Built ReadingStar&rsquo;s music engine</a></h3>
+          <p>Music generation, audio utilities and singing scoring, with IBM, Intel and the National Autistic Society.</p>
+        </div>
+        <span class="ms-arrow" aria-hidden="true"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+      </li>
+      <li>
+        <span class="ms-when">Team project</span>
+        <div>
+          <h3><a href="project_files/uclyellowpages.html">UCL Yellow Pages</a></h3>
+          <p>A secure, student-only directory built in Django with a team of four.</p>
+        </div>
+        <span class="ms-arrow" aria-hidden="true"><i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+      </li>
+    </ol>
+  </section>
+
+  <section class="container section flush-top" aria-labelledby="cap-title">
+    <div class="section-head">
+      <h2 id="cap-title">What I Do</h2>
+    </div>
+    <ol class="capabilities">
+      <li>
+        <span class="cap-num">01</span>
         <h3>Web Development</h3>
-        <p>Full-stack web applications with Django and PostgreSQL on the back end and HTML, CSS and JavaScript on the front end, from secure authentication to fast search.</p>
-        <ul class="tags"><li>Django</li><li>PostgreSQL</li><li>JavaScript</li><li>HTML &amp; CSS</li></ul>
-      </article>
-      <article class="skill">
-        <i class="fas fa-diagram-project" aria-hidden="true"></i>
+        <p>Full-stack web apps with Django and PostgreSQL, from secure authentication and role-based access control to fast, typo-tolerant search.</p>
+      </li>
+      <li>
+        <span class="cap-num">02</span>
         <h3>Algorithms &amp; Optimisation</h3>
-        <p>Turning hard problems into practical tools, from column generation for the NP-hard cutting-stock problem to fuzzy search and singing-accuracy scoring.</p>
-        <ul class="tags"><li>Python</li><li>Column generation</li><li>Search</li></ul>
-      </article>
-      <article class="skill">
-        <i class="fas fa-wave-square" aria-hidden="true"></i>
+        <p>Turning hard problems into practical tools, like column generation for the NP-hard cutting-stock problem behind Profili.</p>
+      </li>
+      <li>
+        <span class="cap-num">03</span>
         <h3>AI &amp; Audio</h3>
-        <p>Integrating and optimising on-device AI models, including Meta&rsquo;s MusicGen and IBM Granite, so they run on low-spec hardware, plus audio utilities and evaluation.</p>
-        <ul class="tags"><li>MusicGen</li><li>IBM Granite</li><li>Electron</li></ul>
-      </article>
-      <article class="skill">
-        <i class="fas fa-microchip" aria-hidden="true"></i>
+        <p>Running AI models such as Meta&rsquo;s MusicGen and IBM Granite on-device and on low-spec hardware, plus audio utilities and singing-accuracy scoring.</p>
+      </li>
+      <li>
+        <span class="cap-num">04</span>
         <h3>Systems &amp; Desktop</h3>
-        <p>Embedded systems and Windows desktop applications, backed by a grounding in C, Java and Haskell from my degree.</p>
-        <ul class="tags"><li>C</li><li>Java</li><li>Haskell</li><li>Embedded</li></ul>
-      </article>
+        <p>Embedded systems and Windows desktop applications, built on a grounding in C, Java and Haskell from my degree.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="container section flush-top" aria-labelledby="tk-title">
+    <div class="section-head">
+      <h2 id="tk-title">Toolkit</h2>
     </div>
+    <dl class="toolkit">
+        <div>
+          <dt>Languages</dt>
+          <dd><ul class="tags"><li>Python</li><li>Java</li><li>JavaScript</li><li>C</li><li>Haskell</li><li>SQL</li></ul></dd>
+        </div>
+        <div>
+          <dt>Web</dt>
+          <dd><ul class="tags"><li>Django</li><li>PostgreSQL</li><li>HTML &amp; CSS</li></ul></dd>
+        </div>
+        <div>
+          <dt>AI &amp; audio</dt>
+          <dd><ul class="tags"><li>MusicGen</li><li>IBM Granite</li><li>Electron</li></ul></dd>
+        </div>
+        <div>
+          <dt>Areas</dt>
+          <dd><ul class="tags"><li>Optimisation</li><li>Search</li><li>Embedded systems</li><li>Desktop apps</li></ul></dd>
+        </div>
+    </dl>
   </section>
 
   <section class="cta-strip" aria-labelledby="cta-title">

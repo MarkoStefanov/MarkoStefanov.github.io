@@ -709,14 +709,6 @@ figcaption {
     align-items: start;
 }
 
-.about-figure img {
-    width: 100%;
-    max-width: 420px;
-    aspect-ratio: 741 / 758;
-    object-fit: cover;
-    border: 1px solid var(--rule);
-}
-
 .about .prose {
     font-size: 1.125rem;
 }
@@ -775,6 +767,241 @@ figcaption {
     font-weight: 600;
 }
 
+/* ---------- Profile (about page) ---------- */
+.profile-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: clamp(32px, 6vw, 80px);
+    align-items: center;
+    padding-block: clamp(40px, 7vw, 88px) clamp(56px, 8vw, 96px);
+}
+
+.profile-hero h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(2.6rem, 6.4vw, 4.75rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin: 12px 0 18px;
+}
+
+.profile-hero .deck {
+    font-size: clamp(1.1rem, 1.9vw, 1.35rem);
+    color: var(--ink-2);
+    max-width: 30em;
+}
+
+.profile-facts {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    margin: 24px 0 30px;
+    font-family: var(--font-ui);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--ink-2);
+}
+
+.profile-facts i {
+    color: var(--accent);
+    margin-right: 6px;
+}
+
+.profile-photo img {
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    margin-left: auto;
+    border: 1px solid var(--rule);
+    box-shadow: 14px 14px 0 var(--paper-2);
+}
+
+/* Milestones: a ruled, newspaper-style list */
+.milestones {
+    list-style: none;
+    border-top: 1px solid var(--rule);
+}
+
+.milestones li {
+    position: relative;
+    display: grid;
+    grid-template-columns: 160px minmax(0, 1fr) auto;
+    gap: 8px 32px;
+    align-items: baseline;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--rule-soft);
+    transition: background-color 0.2s var(--ease);
+}
+
+.milestones li:hover {
+    background: var(--paper-2);
+}
+
+.ms-when {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-left: 12px;
+}
+
+.milestones h3 {
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2.2vw, 1.55rem);
+    line-height: 1.25;
+}
+
+.milestones h3 a::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+}
+
+.milestones p {
+    margin-top: 4px;
+    color: var(--ink-2);
+    font-size: 1rem;
+}
+
+.ms-arrow {
+    padding-right: 12px;
+    color: var(--muted);
+    transition: transform 0.25s var(--ease), color 0.2s;
+}
+
+.milestones li:hover .ms-arrow {
+    color: var(--accent);
+    transform: translateX(4px);
+}
+
+/* Capabilities: numbered columns separated by rules */
+.capabilities {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-top: 1px solid var(--rule);
+}
+
+.capabilities li {
+    padding: 24px 24px 8px;
+    border-left: 1px solid var(--rule-soft);
+}
+
+.capabilities li:first-child {
+    border-left: 0;
+    padding-left: 0;
+}
+
+.cap-num {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2.6rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--accent);
+    margin-bottom: 14px;
+}
+
+.capabilities h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    line-height: 1.25;
+    margin-bottom: 8px;
+}
+
+.capabilities p {
+    color: var(--ink-2);
+    font-size: 0.975rem;
+    line-height: 1.55;
+}
+
+/* Toolkit: ruled definition table */
+.toolkit {
+    border-top: 1px solid var(--rule);
+}
+
+.toolkit > div {
+    display: grid;
+    grid-template-columns: 160px minmax(0, 1fr);
+    gap: 8px 32px;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--rule-soft);
+}
+
+.toolkit dt {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.toolkit .tags li {
+    font-size: 0.8125rem;
+    padding: 4px 12px;
+}
+
+@media (max-width: 1000px) {
+    .capabilities {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .capabilities li:nth-child(3) {
+        border-left: 0;
+        padding-left: 0;
+    }
+
+    .capabilities li:nth-child(n + 3) {
+        border-top: 1px solid var(--rule-soft);
+    }
+}
+
+@media (max-width: 860px) {
+    .profile-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-photo img {
+        margin-left: 0;
+        max-width: 420px;
+    }
+}
+
+@media (max-width: 600px) {
+    .milestones li,
+    .toolkit > div {
+        grid-template-columns: 1fr;
+    }
+
+    .ms-when {
+        padding-left: 0;
+    }
+
+    .ms-arrow {
+        display: none;
+    }
+
+    .capabilities {
+        grid-template-columns: 1fr;
+    }
+
+    .capabilities li,
+    .capabilities li:nth-child(3) {
+        border-left: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .capabilities li + li {
+        border-top: 1px solid var(--rule-soft);
+    }
+}
+
 /* ---------- Page heading ---------- */
 .page-head {
     text-align: center;
@@ -796,46 +1023,6 @@ figcaption {
     font-style: italic;
     font-size: clamp(1.1rem, 2vw, 1.3rem);
     color: var(--ink-2);
-}
-
-/* ---------- Skills ---------- */
-.skill-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(20px, 3vw, 32px);
-}
-
-@media (max-width: 700px) {
-    .skill-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.skill {
-    padding: 24px;
-    background: var(--card);
-    border: 1px solid var(--rule-soft);
-    border-top: 3px solid var(--accent);
-    border-radius: var(--radius);
-}
-
-.skill i {
-    font-size: 1.4rem;
-    color: var(--accent);
-    margin-bottom: 14px;
-}
-
-.skill h3 {
-    font-family: var(--font-display);
-    font-size: 1.35rem;
-    line-height: 1.25;
-    margin-bottom: 8px;
-}
-
-.skill p {
-    color: var(--ink-2);
-    font-size: 1rem;
-    margin-bottom: 16px;
 }
 
 /* ---------- Article (project pages) ---------- */
@@ -1175,11 +1362,7 @@ figcaption {
         order: 0;
     }
 
-    .about-figure img {
-        max-width: 320px;
-    }
-
-    /* Collapse nav into a slide-out drawer */
+        /* Collapse nav into a slide-out drawer */
     .site-header .container {
         justify-content: space-between;
     }
