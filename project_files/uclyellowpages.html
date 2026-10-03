@@ -1,163 +1,170 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UCL Yellow Pages - The Stefanov Herald</title>
-  <link rel="stylesheet" href="/./style.css">
+  <title>UCL Yellow Pages · The Stefanov Herald</title>
+  <meta name="description" content="A private, student-only directory with UCL email verification, granular privacy controls and typo-tolerant search.">
+  <meta name="author" content="Marko Stefanov">
+  <link rel="canonical" href="https://markostefanov.com/project_files/uclyellowpages.html">
+  <meta name="theme-color" content="#f4f0e6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14130f" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The Stefanov Herald">
+  <meta property="og:title" content="UCL Yellow Pages · The Stefanov Herald">
+  <meta property="og:description" content="A private, student-only directory with UCL email verification, granular privacy controls and typo-tolerant search.">
+  <meta property="og:url" content="https://markostefanov.com/project_files/uclyellowpages.html">
+  <meta property="og:image" content="https://markostefanov.com/data/yellow.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="../data/stefanov%20herald%20icon.png">
+  <link rel="apple-touch-icon" href="../data/stefanov%20herald%20icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" type="image/png" href="/./data/stefanov%20herald%20icon.png">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../main.js" defer></script>
 </head>
 <body>
-<header class="header">
-  <div class="location">London, UK</div>
-  <div class="masthead">The Stefanov Herald</div>
-  <div class="menu-icon" id="menuIcon">
-    <span></span>
-    <span></span>
-    <span></span>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="dateline">
+  <div class="container">
+    <span>London, UK</span>
+    <span data-today></span>
+    <span class="dateline-right">Software &middot; Algorithms &middot; AI</span>
   </div>
-</header>
-<div class="page-content">
-
-  <div class="menu-backdrop" id="menuBackdrop"></div>
-
-  <div class="menu-overlay" id="menuOverlay">
-    <div class="menu-content">
-      <nav>
-        <a href="/./index.html" class="menu-link">Home</a>
-        <a href="/./aboutme.html" class="menu-link">About Me</a>
-        <a href="/./projects.html" class="menu-link">Projects</a>
-        <a href="/./contact.html" class="menu-link">Contact Me</a>
-        <a href="/./data/cv.pdf" target="_blank" class="menu-link">CV</a>
-      </nav>
-    </div>
-  </div>
-
-  <section class="center-column">
-    <h1>UCL Yellow Pages</h1>
-    <p class="subtitle">Connecting students, one profile at a time.</p>
-  </section>
-
-  <section class="about-content"
-           style="max-width: 900px; margin: 0 auto; padding: 20px 40px 60px 40px;">
-
-    <h2>Overview</h2>
-    <p>
-      UCL Yellow Pages is a web application designed to bridge the gap in student connectivity at
-      University College London. In a large institution where students are frequently asked to
-      collaborate with peers they have never met, finding relevant contact information can be
-      slow and frustrating. This platform allows students to create and manage profiles containing
-      their contact details — such as emails, social media accounts, and phone numbers — within a
-      secure, authenticated environment, with full control over their visibility and privacy
-      settings.
-    </p>
-
-    <iframe
-        width="100%"
-        height="500"
-        src="https://www.youtube.com/embed/f-By3MEKKsA"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        style="border: 3px solid #1a1a1a; margin: 20px 0 40px 0;">
-    </iframe>
-
-    <h2>Solution</h2>
-    <p>
-      The application is built with the Django web framework, backed by a PostgreSQL database,
-      and uses Django's ORM to keep Python as the sole language throughout the stack.
-      Authentication is handled via UCL email verification — users must register with a valid UCL
-      email address, ensuring the platform remains exclusive to UCL students. From there, students
-      can create and customise their profiles with contact details, configure visibility controls
-      using Role-Based Access Control (RBAC), and search for peers using filters such as course,
-      faculty, department, or cohort. Search is powered by a combination of trigram and full-text
-      search, offering auto-completion and typo tolerance for a smooth user experience.
-    </p>
-    <p>
-      The platform also includes profile view tracking — a personal dashboard that logs who has
-      accessed your profile along with timestamps — and a reporting system that allows students to
-      flag inappropriate profiles or misuse of contact information, with all actions reviewed and
-      logged by admins.
-    </p>
-
-    <h2>Additional Details</h2>
-    <ul style="font-size: 1.1rem; margin-bottom: 20px; padding-left: 20px; line-height: 1.6; text-align: justify;">
-      <li><b>Tech Stack:</b> Django, PostgreSQL, Python, HTML, CSS,
-        JavaScript.
-      </li>
-      <li><b>Notable Algorithms:</b> Trigram tokenisation (O(n)) for
-        auto-completion and
-        full-text search (O(log n)) for ranked results.
-      </li>
-      <li><b>Data Structures:</b> B-tree indexes for fast filtering, a
-        server-side queue for
-        time-expiring access logs, and a graph structure for modelling student relationships
-        and surfacing relevant suggestions.
-      </li>
-      <li><b>Intended but not implemented:</b> UCL Single Sign-On (SSO)
-        integration and
-        automatic profile pre-filling via the UCL directory API were designed as stretch goals
-        but were not realised due to time and access constraints. A formal privacy policy and
-        terms of service were also planned but not yet in place.
-      </li>
-      <li><b>Team:</b> Developed as a group project (myself, Jude
-        Hawrani, Fakhrurrazi Riduan, and Yik Hui Ng) at UCL.
-      </li>
-      <li>
-        <b>Current Goal:</b> clean up the codebase, our repo is horrible because of our inexperience
-        at the time.
-      </li>
-    </ul>
-
-    <div
-        style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
-      <a href="https://github.com/MarkoStefanov/YellowPages" target="_blank" class="link-item">
-        <i class="fab fa-github"></i> View Source
-      </a>
-    </div>
-
-  </section>
-
-  <section class="banner-section">
-    <div class="banner-text">
-      IMPACTFUL<br>SOLUTIONS
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2026 Marko Stefanov. All rights reserved.</p>
-    <p>London, UK</p>
-  </footer>
 </div>
 
-<script>
-  const menuIcon = document.getElementById('menuIcon');
-  const menuOverlay = document.getElementById('menuOverlay');
-  const menuBackdrop = document.getElementById('menuBackdrop');
-  const menuLinks = document.querySelectorAll('.menu-link');
+<div class="masthead">
+  <a class="masthead-title" href="../index.html">The Stefanov Herald</a>
+  <p class="masthead-tagline">The portfolio of Marko Stefanov</p>
+</div>
 
-  menuIcon.addEventListener('click', () => {
-      menuIcon.classList.toggle('active');
-      menuOverlay.classList.toggle('active');
-      menuBackdrop.classList.toggle('active');
-  });
+<header class="site-header">
+  <div class="container">
+    <a class="header-brand" href="../index.html" tabindex="-1">The Stefanov Herald</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+            aria-label="Open menu">
+      <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      Menu
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../aboutme.html">About</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="../data/cv.pdf" target="_blank" rel="noopener">CV</a></li>
+      </ul>
+    </nav>
+    <div class="menu-backdrop" aria-hidden="true"></div>
+  </div>
+</header>
 
-  menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-          menuIcon.classList.remove('active');
-          menuOverlay.classList.remove('active');
-          menuBackdrop.classList.remove('active');
-      });
-  });
+<main id="main">
+  <article class="container">
+    <div class="article">
+      <a class="back-link" href="../projects.html"><i class="fas fa-arrow-left" aria-hidden="true"></i> All projects</a>
 
-  menuBackdrop.addEventListener('click', () => {
-      menuIcon.classList.remove('active');
-      menuOverlay.classList.remove('active');
-      menuBackdrop.classList.remove('active');
-  });
-</script>
+      <header class="article-head">
+        <span class="kicker">Web &middot; Django</span>
+        <h1>UCL Yellow Pages</h1>
+        <p class="deck">Connecting students, one profile at a time.</p>
+        <dl class="fact-box">
+        <div><dt>Team</dt><dd>4 students at UCL</dd></div>
+        <div><dt>Stack</dt><dd>Django, PostgreSQL, Python, JavaScript</dd></div>
+        <div><dt>Highlights</dt><dd>UCL email verification, RBAC, fuzzy search</dd></div>
+        <div><dt>Status</dt><dd>Refactoring</dd></div>
+        </dl>
+      </header>
+
+      <div class="prose">
+        <h2>Overview</h2>
+        <p>
+          UCL Yellow Pages bridges a gap in student connectivity at University College London. At
+          a large university, students are often asked to collaborate with peers they have never
+          met, and finding the right contact details can be slow and frustrating.
+        </p>
+        <p>
+          The platform lets students create and manage profiles with their contact details, such
+          as email, social media and phone number, inside a secure, authenticated environment where
+          they have full control over visibility and privacy.
+        </p>
+
+        <figure>
+          <iframe class="video-frame" src="https://www.youtube-nocookie.com/embed/f-By3MEKKsA"
+                  title="UCL Yellow Pages demo video" loading="lazy"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+          <figcaption>A walkthrough of UCL Yellow Pages.</figcaption>
+        </figure>
+
+        <h2>The Solution</h2>
+        <p>
+          The app is built with Django on a PostgreSQL database, using Django&rsquo;s ORM so that
+          Python is the only language across the back end. Registration requires a verified UCL
+          email address, which keeps the platform exclusive to UCL students.
+        </p>
+        <p>
+          Students customise their profiles, control who can see each detail using role-based
+          access control (RBAC), and search for peers by course, faculty, department or cohort.
+          Search combines trigram matching and full-text search, giving auto-completion and typo
+          tolerance.
+        </p>
+        <p>
+          A personal dashboard shows who has viewed your profile and when, and a reporting system
+          lets students flag inappropriate profiles or misuse of contact details. Admins review
+          and log every report.
+        </p>
+
+        <h2>Additional Details</h2>
+        <ul>
+          <li><strong>Search:</strong> trigram tokenisation for fast, typo-tolerant
+            auto-completion, plus full-text search for ranked results.</li>
+          <li><strong>Data structures:</strong> B-tree indexes for fast filtering, a server-side
+            queue for time-expiring access logs, and a graph structure for modelling student
+            relationships and surfacing relevant suggestions.</li>
+          <li><strong>Designed but not built:</strong> UCL single sign-on (SSO) and automatic
+            profile pre-filling from the UCL directory API were stretch goals that time and access
+            constraints ruled out. A formal privacy policy and terms of service were also
+            planned.</li>
+          <li><strong>Team:</strong> built with Jude Hawrani, Fakhrurrazi Riduan and Yik Hui Ng.</li>
+          <li><strong>Current goal:</strong> refactoring the codebase. It was one of our first
+            team projects, and we&rsquo;ve learned a lot since.</li>
+        </ul>
+
+        <div class="btn-row">
+          <a class="btn btn-primary" href="https://github.com/MarkoStefanov/YellowPages" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> View source</a>
+        </div>
+      </div>
+
+      <a class="next-project" href="readingstar.html">
+        <span class="kicker">Next project</span>
+        <strong>ReadingStar 2.0 <i class="fas fa-arrow-right" aria-hidden="true"></i></strong>
+      </a>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>
+      <a class="footer-brand" href="../index.html">The Stefanov Herald</a>
+      <p>&copy; <span data-year>2026</span> Marko Stefanov &middot; London, UK</p>
+    </div>
+    <ul class="social">
+      <li><a href="mailto:stefanov.marko420@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a></li>
+      <li><a href="https://github.com/MarkoStefanov" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+      <li><a href="https://linkedin.com/in/markostefanov" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+      <li><a href="https://instagram.com/stefanovmarko_" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+    </ul>
+  </div>
+</footer>
 </body>
 </html>
