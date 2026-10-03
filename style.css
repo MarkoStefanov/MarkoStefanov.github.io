@@ -344,6 +344,28 @@ a {
     color: var(--ink);
 }
 
+/* Buttons placed inside article text keep their own styling */
+.prose a.btn {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.prose a.btn-primary {
+    color: var(--paper);
+}
+
+.prose a.btn-primary:hover {
+    color: var(--accent-ink);
+}
+
+.prose a.btn-ghost {
+    color: var(--ink);
+}
+
+.prose a.btn-ghost:hover {
+    color: var(--paper);
+}
+
 /* ---------- Buttons ---------- */
 .btn {
     display: inline-flex;
@@ -1153,6 +1175,122 @@ figcaption {
 
 .next-project:hover i {
     transform: translateX(6px);
+}
+
+/* Inline code and the build-pipeline strip (Arm page) */
+.prose code {
+    font-family: ui-monospace, 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+    font-size: 0.85em;
+    padding: 0.1em 0.4em;
+    border-radius: 3px;
+    background: var(--paper-2);
+    border: 1px solid var(--rule-soft);
+    white-space: nowrap;
+}
+
+.prose h3.repo-title {
+    font-family: var(--font-ui);
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin: 1.8em 0 0.5em;
+}
+
+.prose h3.repo-title a {
+    font-family: ui-monospace, 'SFMono-Regular', Consolas, monospace;
+    text-decoration: none;
+    border-bottom: 2px solid var(--accent);
+}
+
+.prose h3.repo-title a::after {
+    content: ' \2197';
+    color: var(--accent);
+}
+
+.pipeline {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    margin: 1.6em 0 1em !important;
+    padding: 0 !important;
+    border: 1px solid var(--rule);
+    background: var(--card);
+}
+
+.pipeline li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0 !important;
+    padding: 18px 20px 18px 22px;
+    border-left: 1px solid var(--rule-soft);
+}
+
+.pipeline li:first-child {
+    border-left: 0;
+}
+
+.pipeline li + li::before {
+    /* arrow between steps */
+    content: '\2192';
+    position: absolute;
+    left: -13px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--accent-ink);
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.pipeline-step {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.4rem;
+    line-height: 1;
+    color: var(--accent);
+}
+
+.pipeline strong {
+    font-family: ui-monospace, 'SFMono-Regular', Consolas, monospace;
+    font-size: 0.95rem;
+}
+
+.pipeline li > span:last-child {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+    .pipeline {
+        grid-template-columns: 1fr;
+    }
+
+    .pipeline li {
+        border-left: 0;
+        border-top: 1px solid var(--rule-soft);
+    }
+
+    .pipeline li:first-child {
+        border-top: 0;
+    }
+
+    .pipeline li + li::before {
+        content: '\2193';
+        left: auto;
+        right: 18px;
+        top: -12px;
+        transform: none;
+    }
 }
 
 /* ---------- Contact ---------- */

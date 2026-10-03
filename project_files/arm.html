@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arm: GPU Build Team · The Stefanov Herald</title>
+  <meta name="description" content="Interned on Arm&rsquo;s GPU build team, owning three open-source Bazel rulesets for building OS images: filesystems, GPT disks and U-Boot images.">
+  <meta name="author" content="Marko Stefanov">
+  <link rel="canonical" href="https://markostefanov.com/project_files/arm.html">
+  <meta name="theme-color" content="#f4f0e6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14130f" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="The Stefanov Herald">
+  <meta property="og:title" content="Arm: GPU Build Team · The Stefanov Herald">
+  <meta property="og:description" content="Interned on Arm&rsquo;s GPU build team, owning three open-source Bazel rulesets for building OS images: filesystems, GPT disks and U-Boot images.">
+  <meta property="og:url" content="https://markostefanov.com/project_files/arm.html">
+  <meta property="og:image" content="https://markostefanov.com/data/arm-thumb.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="../data/stefanov%20herald%20icon.png">
+  <link rel="apple-touch-icon" href="../data/stefanov%20herald%20icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+  <script src="../main.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="dateline">
+  <div class="container">
+    <span>London, UK</span>
+    <span data-today></span>
+    <span class="dateline-right">Software &middot; Algorithms &middot; AI</span>
+  </div>
+</div>
+
+<div class="masthead">
+  <a class="masthead-title" href="../index.html">The Stefanov Herald</a>
+  <p class="masthead-tagline">The portfolio of Marko Stefanov</p>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <a class="header-brand" href="../index.html" tabindex="-1">The Stefanov Herald</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+            aria-label="Open menu">
+      <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      Menu
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../aboutme.html">About</a></li>
+        <li><a href="../projects.html">Projects</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="../data/cv.pdf" target="_blank" rel="noopener">CV</a></li>
+      </ul>
+    </nav>
+    <div class="menu-backdrop" aria-hidden="true"></div>
+  </div>
+</header>
+
+<main id="main">
+  <article class="container">
+    <div class="article">
+      <a class="back-link" href="../projects.html"><i class="fas fa-arrow-left" aria-hidden="true"></i> All projects</a>
+
+      <header class="article-head">
+        <span class="kicker">Internship &middot; Summer 2026</span>
+        <h1>Arm: GPU Build Team</h1>
+        <p class="deck">Hermetic build tooling for the next generation of Arm&rsquo;s GPU software.</p>
+        <dl class="fact-box">
+        <div><dt>Company</dt><dd>Arm</dd></div>
+        <div><dt>Team</dt><dd>GPU Build &middot; Project Ragnarok</dd></div>
+        <div><dt>When</dt><dd>Summer 2026</dd></div>
+        <div><dt>Stack</dt><dd>Bazel, Starlark, GitLab CI, Go</dd></div>
+        </dl>
+      </header>
+
+      <div class="prose">
+        <h2>Overview</h2>
+        <p>
+          In summer 2026 I joined the <strong>GPU build team</strong> at Arm. The team works on
+          <strong>Project Ragnarok</strong>, whose goal is to move Arm&rsquo;s GPU software away
+          from its legacy build infrastructure and onto more scalable tooling, namely
+          <strong>Bazel</strong> for builds and <strong>GitLab</strong> for source control and
+          CI.
+        </p>
+
+        <h2>Why Bazel: Hermeticity</h2>
+        <p>
+          Bazel is a build system with a strong focus on <strong>hermeticity</strong>. A hermetic
+          build is sealed off from the machine it runs on: it only uses inputs it has explicitly
+          declared, such as pinned source code, tools and compilers, and never whatever happens to
+          be installed on the host. The same inputs always produce the same outputs, on a
+          laptop or a CI runner.
+        </p>
+        <p>
+          That makes builds reproducible and safe to cache. Bazel can reuse results across
+          machines and only rebuild what actually changed, which matters at the scale of a GPU
+          software stack. In practice, it means every tool a build needs is provided through a
+          Bazel <em>toolchain</em> rather than assumed to be on the system.
+        </p>
+
+        <h2>What I Built</h2>
+        <p>
+          I owned three open-source Bazel rulesets, published under the MIT licence on Arm&rsquo;s
+          GitLab, that together cover the steps of building an operating-system image:
+        </p>
+
+        <ol class="pipeline">
+          <li>
+            <span class="pipeline-step">01</span>
+            <strong>rules_mkfs</strong>
+            <span>Files &rarr; filesystem image (ext4)</span>
+          </li>
+          <li>
+            <span class="pipeline-step">02</span>
+            <strong>rules_uboot</strong>
+            <span>Kernel or ramdisk &rarr; U-Boot image</span>
+          </li>
+          <li>
+            <span class="pipeline-step">03</span>
+            <strong>rules_disk</strong>
+            <span>Partitions &rarr; GPT disk image</span>
+          </li>
+        </ol>
+
+        <h3 class="repo-title"><a href="https://gitlab.arm.com/bazel/rules_mkfs" target="_blank" rel="noopener">rules_mkfs</a></h3>
+        <p>
+          Rules for creating filesystem images. <code>mkfs_file</code> turns a tarball of files
+          into a labelled <strong>ext4</strong> image, with the filesystem tools provided through
+          Bazel toolchains. I wrote most of the ruleset: I added support for Bazel&nbsp;9&rsquo;s
+          dependency resolution, set up GitLab CI, and wrote end-to-end tests that inspect the
+          generated images with e2fsprogs tools such as <code>debugfs</code>,
+          <code>dumpe2fs</code> and <code>e2label</code>.
+        </p>
+
+        <h3 class="repo-title"><a href="https://gitlab.arm.com/bazel/rules_disk" target="_blank" rel="noopener">rules_disk</a></h3>
+        <p>
+          Rules for assembling partitions into <strong>GPT disk images</strong> with
+          <code>partition_info</code> and <code>gpt_disk_image</code>. I built the
+          <code>sgdisk</code> toolchain: a host fallback for development, and a hermetic option
+          that downloads a pinned, checksum-verified static binary. I also wrote an end-to-end
+          test suite in Go that extracts each partition from the generated disk and verifies
+          its contents, covering named, mixed, multi-partition and raw-payload layouts, and I
+          removed redundant tool usage from the image-building step.
+        </p>
+
+        <h3 class="repo-title"><a href="https://gitlab.arm.com/bazel/rules_uboot" target="_blank" rel="noopener">rules_uboot</a></h3>
+        <p>
+          Rules for creating <strong>U-Boot images</strong> with <code>mkimage</code>, the format
+          bootloaders use to load kernels and ramdisks. I created the repository and its
+          foundations, including the project layout, licensing, pre-commit hooks and CI. My
+          colleague Jonathan Watson then made <code>mkimage</code> fully hermetic by building it
+          from pinned U-Boot sources.
+        </p>
+
+        <h2>Shared Foundations</h2>
+        <ul>
+          <li><strong>Consistent setup:</strong> all three repositories share the same project
+            layout, MIT licensing, <code>CODEOWNERS</code> and pre-commit hooks, so they are easy
+            to maintain together.</li>
+          <li><strong>CI on GitLab:</strong> every change is built and tested through Arm&rsquo;s
+            shared Bazel CI component, which I kept up to date as it evolved.</li>
+          <li><strong>Keeping tests hermetic:</strong> tests that still depend on host tools are kept
+            out of wildcard runs, so the default test suite stays hermetic.</li>
+          <li><strong>Release registry:</strong> pre-release versions are published to GitLab
+            releases, so other teams can depend on them before they reach the Bazel Central
+            Registry.</li>
+        </ul>
+
+        <div class="btn-row">
+          <a class="btn btn-primary" href="https://gitlab.arm.com/bazel/rules_mkfs" target="_blank" rel="noopener"><i class="fab fa-gitlab" aria-hidden="true"></i> rules_mkfs</a>
+          <a class="btn btn-ghost" href="https://gitlab.arm.com/bazel/rules_disk" target="_blank" rel="noopener"><i class="fab fa-gitlab" aria-hidden="true"></i> rules_disk</a>
+          <a class="btn btn-ghost" href="https://gitlab.arm.com/bazel/rules_uboot" target="_blank" rel="noopener"><i class="fab fa-gitlab" aria-hidden="true"></i> rules_uboot</a>
+        </div>
+      </div>
+
+      <a class="next-project" href="readingstar.html">
+        <span class="kicker">Next project</span>
+        <strong>ReadingStar 2.0 <i class="fas fa-arrow-right" aria-hidden="true"></i></strong>
+      </a>
+    </div>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>
+      <a class="footer-brand" href="../index.html">The Stefanov Herald</a>
+      <p>&copy; <span data-year>2026</span> Marko Stefanov &middot; London, UK</p>
+    </div>
+    <ul class="social">
+      <li><a href="mailto:stefanov.marko420@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a></li>
+      <li><a href="https://github.com/MarkoStefanov" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+      <li><a href="https://linkedin.com/in/markostefanov" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+      <li><a href="https://instagram.com/stefanovmarko_" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>
