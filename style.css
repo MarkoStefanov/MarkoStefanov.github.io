@@ -573,17 +573,6 @@ figcaption {
     background: var(--paper);
 }
 
-/* Small logo artwork: show at natural size on its own background colour */
-.card-media.media-logo,
-.project-row-media.media-logo {
-    background: #55e5e5;
-}
-
-.card .media-logo img,
-.project-row .media-logo img {
-    object-fit: scale-down;
-}
-
 /* ---------- Project list (projects page) ---------- */
 .project-list {
     display: grid;
