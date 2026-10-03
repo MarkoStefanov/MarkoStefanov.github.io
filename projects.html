@@ -1,160 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects - The Stefanov Herald</title>
+  <title>Projects · The Stefanov Herald</title>
+  <meta name="description" content="Selected work by Marko Stefanov: his Arm internship, ReadingStar 2.0, Profili and UCL Yellow Pages.">
+  <meta name="author" content="Marko Stefanov">
+  <link rel="canonical" href="https://markostefanov.com/projects.html">
+  <meta name="theme-color" content="#f4f0e6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14130f" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Stefanov Herald">
+  <meta property="og:title" content="Projects · The Stefanov Herald">
+  <meta property="og:description" content="Selected work by Marko Stefanov: his Arm internship, ReadingStar 2.0, Profili and UCL Yellow Pages.">
+  <meta property="og:url" content="https://markostefanov.com/projects.html">
+  <meta property="og:image" content="https://markostefanov.com/data/readingstar-team.JPG">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="data/stefanov%20herald%20icon.png">
+  <link rel="apple-touch-icon" href="data/stefanov%20herald%20icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" type="image/png" href="/./data/stefanov%20herald%20icon.png">
+  <script src="main.js" defer></script>
 </head>
 <body>
-<header class="header">
-  <div class="location">London, UK</div>
-  <div class="masthead">The Stefanov Herald</div>
-  <div class="menu-icon" id="menuIcon">
-    <span></span>
-    <span></span>
-    <span></span>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="dateline">
+  <div class="container">
+    <span>London, UK</span>
+    <span data-today></span>
+    <span class="dateline-right">Software &middot; Algorithms &middot; AI</span>
   </div>
-</header>
-<div class="page-content">
-
-  <div class="menu-backdrop" id="menuBackdrop"></div>
-
-  <div class="menu-overlay" id="menuOverlay">
-    <div class="menu-content">
-      <nav>
-        <a href="index.html" class="menu-link">Home</a>
-        <a href="aboutme.html" class="menu-link">About Me</a>
-        <a href="projects.html" class="menu-link">Projects</a>
-        <a href="contact.html" class="menu-link">Contact Me</a>
-        <a href="data/cv.pdf" target="_blank" class="menu-link">CV</a>
-      </nav>
-    </div>
-  </div>
-  <section class="banner-section" style="margin-top: 0px;">
-    <div class="banner-text">
-      PROJECTS
-    </div>
-  </section>
-
-
-  <section class="hero-section">
-    <a href="project_files/readingstar.html">
-      <div class="featured-grid">
-        <div class="featured-item">
-          <div class="featured-image">
-            <img class="featured-image" src="/data/readingstar-team.JPG" alt="Readingstar Team">
-            <span class="badge">New</span>
-          </div>
-          <div class="featured-content">
-            <h3 class="featured-title">Readingstar 2.0</h3>
-            <p class="featured-description">
-              The team got to present our project at the 2026 Bett Conference on 22 January.
-              <br> It was a great opportunity to showcase our progress and connect with professionals in the EdTech industry.
-            </p>
-          </div>
-        </div>
-    </a>
-
-    <a href="project_files/profili.html">
-      <div class="featured-item">
-        <div class="featured-image" style="background: #56e5e5;">
-          <img class="featured-image" src="/data/profili.jpg" alt="Profili">
-        </div>
-        <div class="featured-content">
-          <h3 class="featured-title">Profili</h3>
-          <p class="featured-description">
-            A web application for generating optimal pipe-cutting instructions.
-            This tool was developed to reduce industrial waste at ElektroLab, where
-            it was successfully integrated and has been used in production since.
-          </p>
-        </div>
-      </div>
-    </a>
-
-      <div class="featured-item">
-        <div class="featured-image" style="background: linear-gradient(135deg, #d4cfc4 0%, #b4afa4 100%);">
-          <img class="featured-image" src="/data/yellow.png" alt="Yellow Pages">
-        </div>
-        <div class="featured-content">
-          <h3 class="featured-title">UCL Yellow Pages</h3>
-          <p class="featured-description">
-            Built using the Django framework, it features a secure model hierarchy and email verification to ensure a private, student-only networking environment.
-          </p>
-        </div>
-      </div>
-
-      <div class="featured-item">
-        <div class="featured-image" style="background: linear-gradient(135deg, #4a5a6a 0%, #3a4a5a 100%);">
-        </div>
-        <div class="featured-content">
-          <h3 class="featured-title">Embedded Systems</h3>
-          <p class="featured-description">
-            Development of embedded software solutions for various industrial applications,
-            focusing on efficiency and reliability.
-          </p>
-        </div>
-      </div>
-
-      <div class="featured-item">
-        <div class="featured-image" style="background: linear-gradient(135deg, #6a4a5a 0%, #5a3a4a 100%);">
-        </div>
-        <div class="featured-content">
-          <h3 class="featured-title">Desktop Applications</h3>
-          <p class="featured-description">
-            Created Windows desktop applications with intuitive user interfaces
-            and robust functionality for business operations.
-          </p>
-        </div>
-      </div>
-
-      <div class="featured-item">
-        <div class="featured-image" style="background: linear-gradient(135deg, #5a6a4a 0%, #4a5a3a 100%);">
-        </div>
-        <div class="featured-content">
-          <h3 class="featured-title">Open Source Contributions</h3>
-          <p class="featured-description">
-            Active contributor to various open-source projects, helping to improve
-            software tools used by developers worldwide.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2026 Marko Stefanov. All rights reserved.</p>
-    <p>London, UK</p>
-  </footer>
 </div>
 
-<script>
-  const menuIcon = document.getElementById('menuIcon');
-  const menuOverlay = document.getElementById('menuOverlay');
-  const menuBackdrop = document.getElementById('menuBackdrop');
-  const menuLinks = document.querySelectorAll('.menu-link');
+<div class="masthead">
+  <a class="masthead-title" href="index.html">The Stefanov Herald</a>
+  <p class="masthead-tagline">The portfolio of Marko Stefanov</p>
+</div>
 
-  menuIcon.addEventListener('click', () => {
-      menuIcon.classList.toggle('active');
-      menuOverlay.classList.toggle('active');
-      menuBackdrop.classList.toggle('active');
-  });
+<header class="site-header">
+  <div class="container">
+    <a class="header-brand" href="index.html" tabindex="-1">The Stefanov Herald</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+            aria-label="Open menu">
+      <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      Menu
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutme.html">About</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="data/cv.pdf" target="_blank" rel="noopener">CV</a></li>
+      </ul>
+    </nav>
+    <div class="menu-backdrop" aria-hidden="true"></div>
+  </div>
+</header>
 
-  menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-          menuIcon.classList.remove('active');
-          menuOverlay.classList.remove('active');
-          menuBackdrop.classList.remove('active');
-      });
-  });
+<main id="main">
+  <section class="container page-head">
+    <span class="kicker">Portfolio</span>
+    <h1>Projects</h1>
+    <p class="deck">Selected work, from build tooling at Arm and a tool running in production to
+      team projects built with industry partners.</p>
+  </section>
 
-  menuBackdrop.addEventListener('click', () => {
-      menuIcon.classList.remove('active');
-      menuOverlay.classList.remove('active');
-      menuBackdrop.classList.remove('active');
-  });
-</script>
+  <section class="container section flush-top" aria-label="Project list">
+    <div class="project-list">
+      <article class="project-row">
+        <div class="project-row-media">
+          <img src="data/arm.jpg" alt="Arm internship on the GPU build team" width="1600" height="1000" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <span class="kicker">Internship &middot; Summer 2026</span>
+          <h2><a href="project_files/arm.html">Arm: GPU Build Team</a></h2>
+          <p>Interned on Arm&rsquo;s GPU build team, owning three open-source Bazel rulesets for building OS images: filesystems, GPT disks and U-Boot images.</p>
+          <ul class="tags"><li>Bazel</li><li>Starlark</li><li>GitLab CI</li><li>Go</li></ul>
+          <span class="card-cta" aria-hidden="true">Read the full story <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        </div>
+      </article>
+
+      <article class="project-row">
+        <div class="project-row-media">
+          <span class="badge">Bett 2026</span>
+          <img src="data/readingstar-team.JPG" alt="The ReadingStar team at the Bett UK stand" width="984" height="600" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <span class="kicker">AI &middot; EdTech</span>
+          <h2><a href="project_files/readingstar.html">ReadingStar 2.0</a></h2>
+          <p>An offline app that helps autistic children practise speech by singing along to AI-generated songs about their interests. Built at UCL with IBM, Intel and the National Autistic Society.</p>
+          <ul class="tags"><li>Electron</li><li>IBM Granite</li><li>MusicGen</li><li>Audio</li></ul>
+          <span class="card-cta" aria-hidden="true">Read the full story <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        </div>
+      </article>
+
+      <article class="project-row">
+        <div class="project-row-media">
+          <img src="data/profili-thumb.jpg" alt="Profili: a cutting plan showing stock pipes divided into cut pieces with small offcuts" width="1600" height="1000" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <span class="kicker">Optimisation &middot; In production</span>
+          <h2><a href="project_files/profili.html">Profili</a></h2>
+          <p>A web app that generates optimal pipe-cutting plans. Built to reduce industrial waste at ElektroLab, where it has been used in production for over a year.</p>
+          <ul class="tags"><li>Django</li><li>JavaScript</li><li>Column generation</li></ul>
+          <span class="card-cta" aria-hidden="true">Read the full story <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        </div>
+      </article>
+
+      <article class="project-row">
+        <div class="project-row-media">
+          <img src="data/yellowpages-thumb.jpg" alt="UCL Yellow Pages: a typo-tolerant student search above profile cards with privacy controls" width="1600" height="1000" loading="lazy" decoding="async">
+        </div>
+        <div>
+          <span class="kicker">Web &middot; Django</span>
+          <h2><a href="project_files/uclyellowpages.html">UCL Yellow Pages</a></h2>
+          <p>A private, student-only directory with UCL email verification, granular privacy controls and typo-tolerant search.</p>
+          <ul class="tags"><li>Django</li><li>PostgreSQL</li><li>Full-text search</li></ul>
+          <span class="card-cta" aria-hidden="true">Read the full story <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        </div>
+      </article>
+    </div>
+
+    <div class="callout">
+      <div>
+        <h2>More on GitHub</h2>
+        <p>Smaller projects and experiments live on my GitHub profile.</p>
+      </div>
+      <a class="btn btn-primary" href="https://github.com/MarkoStefanov" target="_blank" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> View GitHub</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>
+      <a class="footer-brand" href="index.html">The Stefanov Herald</a>
+      <p>&copy; <span data-year>2026</span> Marko Stefanov &middot; London, UK</p>
+    </div>
+    <ul class="social">
+      <li><a href="mailto:stefanov.marko420@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a></li>
+      <li><a href="https://github.com/MarkoStefanov" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+      <li><a href="https://linkedin.com/in/markostefanov" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+      <li><a href="https://instagram.com/stefanovmarko_" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+    </ul>
+  </div>
+</footer>
 </body>
 </html>

@@ -1,108 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Me - The Stefanov Herald</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Contact · The Stefanov Herald</title>
+  <meta name="description" content="Get in touch with Marko Stefanov by email, LinkedIn or GitHub.">
+  <meta name="author" content="Marko Stefanov">
+  <link rel="canonical" href="https://markostefanov.com/contact.html">
+  <meta name="theme-color" content="#f4f0e6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14130f" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Stefanov Herald">
+  <meta property="og:title" content="Contact · The Stefanov Herald">
+  <meta property="og:description" content="Get in touch with Marko Stefanov by email, LinkedIn or GitHub.">
+  <meta property="og:url" content="https://markostefanov.com/contact.html">
+  <meta property="og:image" content="https://markostefanov.com/data/me.JPG">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="data/stefanov%20herald%20icon.png">
+  <link rel="apple-touch-icon" href="data/stefanov%20herald%20icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" type="image/png" href="/./data/stefanov%20herald%20icon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
 </head>
 <body>
-<header class="header">
-  <div class="location">London, UK</div>
-  <div class="masthead">The Stefanov Herald</div>
-  <div class="menu-icon" id="menuIcon">
-    <span></span>
-    <span></span>
-    <span></span>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="dateline">
+  <div class="container">
+    <span>London, UK</span>
+    <span data-today></span>
+    <span class="dateline-right">Software &middot; Algorithms &middot; AI</span>
   </div>
-</header>
-<div class="page-content">
-
-  <div class="menu-backdrop" id="menuBackdrop"></div>
-
-  <div class="menu-overlay" id="menuOverlay">
-    <div class="menu-content">
-      <nav>
-        <a href="index.html" class="menu-link">Home</a>
-        <a href="aboutme.html" class="menu-link">About Me</a>
-        <a href="projects.html" class="menu-link">Projects</a>
-        <a href="contact.html" class="menu-link">Contact Me</a>
-        <a href="data/cv.pdf" target="_blank" class="menu-link">CV</a>
-      </nav>
-    </div>
-  </div>
-
-  <section class="linktree-section">
-    <div class="linktree-container">
-      <div class="linktree-profile">
-        <img src="/data/me.JPG" alt="Marko Stefanov" class="linktree-avatar">
-        <h1 class="linktree-name">Marko Stefanov</h1>
-        <p class="linktree-bio">Software Developer | Problem Solver | Based in London</p>
-      </div>
-
-      <div class="linktree-links">
-        <a href="mailto:stefanov.marko420@gmail.com" class="linktree-button">
-          <i class="fas fa-envelope"></i>
-          <span>Email Me</span>
-        </a>
-
-        <a href="https://linkedin.com/in/markostefanov" target="_blank" class="linktree-button">
-          <i class="fab fa-linkedin"></i>
-          <span>LinkedIn</span>
-        </a>
-
-        <a href="https://github.com/MarkoStefanov" target="_blank" class="linktree-button">
-          <i class="fab fa-github"></i>
-          <span>GitHub</span>
-        </a>
-
-        <a href="https://instagram.com/stefanovmarko_" target="_blank" class="linktree-button">
-          <i class="fab fa-instagram"></i>
-          <span>Instagram</span>
-        </a>
-
-        <a href="data/cv.pdf" target="_blank" class="linktree-button">
-          <i class="fas fa-file-pdf"></i>
-          <span>CV</span>
-        </a>
-      </div>
-
-      <div class="linktree-footer">
-        <p>© 2026 Marko Stefanov</p>
-      </div>
-    </div>
-  </section>
-
 </div>
 
-<script>
-  const menuIcon = document.getElementById('menuIcon');
-  const menuOverlay = document.getElementById('menuOverlay');
-  const menuBackdrop = document.getElementById('menuBackdrop');
-  const menuLinks = document.querySelectorAll('.menu-link');
+<div class="masthead">
+  <a class="masthead-title" href="index.html">The Stefanov Herald</a>
+  <p class="masthead-tagline">The portfolio of Marko Stefanov</p>
+</div>
 
-  menuIcon.addEventListener('click', () => {
-      menuIcon.classList.toggle('active');
-      menuOverlay.classList.toggle('active');
-      menuBackdrop.classList.toggle('active');
-  });
+<header class="site-header">
+  <div class="container">
+    <a class="header-brand" href="index.html" tabindex="-1">The Stefanov Herald</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+            aria-label="Open menu">
+      <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      Menu
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutme.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+        <li><a href="data/cv.pdf" target="_blank" rel="noopener">CV</a></li>
+      </ul>
+    </nav>
+    <div class="menu-backdrop" aria-hidden="true"></div>
+  </div>
+</header>
 
-  menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-          menuIcon.classList.remove('active');
-          menuOverlay.classList.remove('active');
-          menuBackdrop.classList.remove('active');
-      });
-  });
+<main id="main">
+  <section class="container">
+    <div class="contact">
+      <img class="contact-avatar" src="data/me.JPG" alt="Marko Stefanov" width="128" height="128">
+      <h1>Marko Stefanov</h1>
+      <p class="deck">Software Developer &middot; Problem Solver &middot; London</p>
 
-  menuBackdrop.addEventListener('click', () => {
-      menuIcon.classList.remove('active');
-      menuOverlay.classList.remove('active');
-      menuBackdrop.classList.remove('active');
-  });
-</script>
+      <ul class="contact-links">
+        <li><a class="contact-link" href="mailto:stefanov.marko420@gmail.com">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          <span>Email<small>stefanov.marko420@gmail.com</small></span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i></a></li>
+        <li><a class="contact-link" href="https://linkedin.com/in/markostefanov" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+          <span>LinkedIn<small>in/markostefanov</small></span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i></a></li>
+        <li><a class="contact-link" href="https://github.com/MarkoStefanov" target="_blank" rel="noopener">
+          <i class="fab fa-github" aria-hidden="true"></i>
+          <span>GitHub<small>@MarkoStefanov</small></span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i></a></li>
+        <li><a class="contact-link" href="https://instagram.com/stefanovmarko_" target="_blank" rel="noopener">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+          <span>Instagram<small>@stefanovmarko_</small></span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i></a></li>
+        <li><a class="contact-link" href="data/cv.pdf" target="_blank" rel="noopener">
+          <i class="fas fa-file-pdf" aria-hidden="true"></i>
+          <span>CV<small>PDF</small></span>
+          <i class="fas fa-arrow-right" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div>
+      <a class="footer-brand" href="index.html">The Stefanov Herald</a>
+      <p>&copy; <span data-year>2026</span> Marko Stefanov &middot; London, UK</p>
+    </div>
+    <ul class="social">
+      <li><a href="mailto:stefanov.marko420@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a></li>
+      <li><a href="https://github.com/MarkoStefanov" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+      <li><a href="https://linkedin.com/in/markostefanov" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+      <li><a href="https://instagram.com/stefanovmarko_" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+    </ul>
+  </div>
+</footer>
 </body>
 </html>

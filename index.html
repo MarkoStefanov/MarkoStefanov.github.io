@@ -1,198 +1,204 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Stefanov Herald</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Marko Stefanov · The Stefanov Herald</title>
+  <meta name="description" content="Marko Stefanov is a London-based software developer, UCL Computer Science student and former Arm intern building build tooling, optimisation tools, web apps and on-device AI.">
+  <meta name="author" content="Marko Stefanov">
+  <link rel="canonical" href="https://markostefanov.com/">
+  <meta name="theme-color" content="#f4f0e6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#14130f" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Stefanov Herald">
+  <meta property="og:title" content="Marko Stefanov · The Stefanov Herald">
+  <meta property="og:description" content="Marko Stefanov is a London-based software developer, UCL Computer Science student and former Arm intern building build tooling, optimisation tools, web apps and on-device AI.">
+  <meta property="og:url" content="https://markostefanov.com/">
+  <meta property="og:image" content="https://markostefanov.com/data/marko-stefanov.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="data/stefanov%20herald%20icon.png">
+  <link rel="apple-touch-icon" href="data/stefanov%20herald%20icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
   <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" type="image/png" href="/./data/stefanov%20herald%20icon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
 </head>
 <body>
-<header class="header">
-  <div class="location">London, UK</div>
-  <div class="masthead">The Stefanov Herald</div>
-  <div class="menu-icon" id="menuIcon">
-    <span></span>
-    <span></span>
-    <span></span>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="dateline">
+  <div class="container">
+    <span>London, UK</span>
+    <span data-today></span>
+    <span class="dateline-right">Software &middot; Algorithms &middot; AI</span>
+  </div>
+</div>
+
+<div class="masthead">
+  <a class="masthead-title" href="index.html">The Stefanov Herald</a>
+  <p class="masthead-tagline">The portfolio of Marko Stefanov</p>
+</div>
+
+<header class="site-header">
+  <div class="container">
+    <a class="header-brand" href="index.html" tabindex="-1">The Stefanov Herald</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"
+            aria-label="Open menu">
+      <span class="menu-icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      Menu
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="aboutme.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="data/cv.pdf" target="_blank" rel="noopener">CV</a></li>
+      </ul>
+    </nav>
+    <div class="menu-backdrop" aria-hidden="true"></div>
   </div>
 </header>
-<div class="page-content">
 
-
-  <div class="menu-backdrop" id="menuBackdrop"></div>
-
-  <div class="menu-overlay" id="menuOverlay">
-    <div class="menu-content">
-      <nav>
-        <a href="aboutme.html" class="menu-link">About Me</a>
-        <a href="projects.html" class="menu-link">My Work</a>
-        <a href="contact.html" class="menu-link">Contact Me</a>
-        <a href="data/cv.pdf" target="_blank" class="menu-link">CV</a>
-      </nav>
-    </div>
-  </div>
-
-  <section class="hero-section" id="work">
-    <div class="center-column">
-      <h1><i>Featured work</i></h1>
-    </div>
-
-
-    <div class="featured-grid">
-      <div class="featured-item">
-        <a href="project_files/readingstar.html">
-          <div class="featured-image">
-            <img class="featured-image" src="/data/readingstar-team.JPG" alt="Readingstar Team">
-            <span class="badge">New</span>
-          </div>
-          <div class="featured-content">
-            <h3 class="featured-title">Readingstar 2.0</h3>
-            <p class="featured-description">
-              The team got to present our project at the 2026 Bett Conference on 22 January.
-              <br> It was a great opportunity to showcase our progress and connect with
-              professionals in the EdTech industry.
-            </p>
-          </div>
-        </a>
+<main id="main">
+  <section class="container lead">
+    <div>
+      <span class="kicker">Software Developer &middot; London</span>
+      <h1>I build software that solves <em>real</em> problems.</h1>
+      <p class="deck">
+        I&rsquo;m Marko Stefanov, a Computer Science student at UCL and a former intern on
+        Arm&rsquo;s GPU build team. My work ranges from hermetic Bazel build tooling to an
+        optimisation tool that has run in production for over a year.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="projects.html">See my work <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        <a class="btn btn-ghost" href="data/cv.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf" aria-hidden="true"></i> Download CV</a>
       </div>
+    </div>
+    <figure class="lead-figure">
+      <img src="data/boba.jpg"  width="741" height="758" fetchpriority="high">
+    </figure>
+  </section>
 
-
-      <a href="project_files/profili.html">
-        <div class="featured-item">
-          <div class="featured-image" style="background: #56e5e5;">
-            <img class="featured-image" src="/data/profili.jpg" alt="Profili">
-          </div>
-          <div class="featured-content">
-            <h3 class="featured-title">Profili</h3>
-            <p class="featured-description">
-              A web application for generating optimal pipe-cutting instructions.
-              This tool was developed to reduce industrial waste at ElektroLab, where
-              it was successfully integrated and has been used in production since.
-            </p>
-          </div>
+  <section class="container section flush-top" aria-labelledby="featured-title">
+    <div class="section-head">
+      <h2 id="featured-title">Featured Work</h2>
+      <a class="more" href="projects.html">All projects <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+    <div class="card-grid">
+      <article class="card">
+        <div class="card-media">
+          <img src="data/arm.jpg" alt="Arm internship on the GPU build team" width="1600" height="1000" loading="lazy" decoding="async">
         </div>
-      </a>
+        <div class="card-body">
+          <span class="kicker">Internship &middot; Summer 2026</span>
+          <h3 class="card-title"><a href="project_files/arm.html">Arm: GPU Build Team</a></h3>
+          <p class="card-text">Interned on Arm&rsquo;s GPU build team, owning three open-source Bazel rulesets for building OS images: filesystems, GPT disks and U-Boot images.</p>
+          <span class="card-cta" aria-hidden="true">Read more <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        </div>
+      </article>
 
+      <article class="card">
+        <div class="card-media">
+          <span class="badge">Bett 2026</span>
+          <img src="data/readingstar-team.JPG" alt="The ReadingStar team at the Bett UK stand" width="984" height="600" loading="lazy" decoding="async">
+        </div>
+        <div class="card-body">
+          <span class="kicker">AI &middot; EdTech</span>
+          <h3 class="card-title"><a href="project_files/readingstar.html">ReadingStar 2.0</a></h3>
+          <p class="card-text">An offline app that helps autistic children practise speech by singing along to AI-generated songs about their interests. Built at UCL with IBM, Intel and the National Autistic Society.</p>
+          <span class="card-cta" aria-hidden="true">Read more <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        </div>
+      </article>
 
-      <div class="featured-item">
-        <a href="project_files/uclyellowpages.html">
-          <div class="featured-image"
-               style="background: linear-gradient(135deg, #d4cfc4 0%, #b4afa4 100%);">
-            <img class="featured-image" src="/data/yellow.png" alt="Yellow Pages">
-          </div>
-          <div class="featured-content">
-            <h3 class="featured-title">UCL Yellow Pages</h3>
-            <p class="featured-description">
-              Built using the Django framework, it features a secure model hierarchy and email
-              verification to ensure a private, student-only networking environment.
-            </p>
-          </div>
-        </a>
+      <article class="card">
+        <div class="card-media">
+          <img src="data/profili-thumb.jpg" alt="Profili: a cutting plan showing stock pipes divided into cut pieces with small offcuts" width="1600" height="1000" loading="lazy" decoding="async">
+        </div>
+        <div class="card-body">
+          <span class="kicker">Optimisation &middot; In production</span>
+          <h3 class="card-title"><a href="project_files/profili.html">Profili</a></h3>
+          <p class="card-text">A web app that generates optimal pipe-cutting plans. Built to reduce industrial waste at ElektroLab, where it has been used in production for over a year.</p>
+          <span class="card-cta" aria-hidden="true">Read more <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="banner" aria-hidden="true">
+    <div class="banner-text">Marko<br>Stefanov</div>
+    <p class="banner-sub">Software developer &middot; London</p>
+  </section>
+
+  <section class="container section" aria-labelledby="about-title">
+    <div class="section-head">
+      <h2 id="about-title">About</h2>
+      <a class="more" href="aboutme.html">More about me <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+    <div class="about about-home">
+      <div class="prose">
+          <p>
+            Based in London, I&rsquo;m a Computer Science student at UCL. I like building software
+            that people actually use, and I&rsquo;m happiest where algorithms meet real-world
+            constraints.
+          </p>
+          <p>
+            This summer I interned at Arm on the GPU build team, where I owned three open-source
+            Bazel rulesets for building OS images. Before that, my work took me across web
+            applications, embedded systems and Windows desktop software. Profili uses column generation to cut material waste at ElektroLab; on
+            ReadingStar&nbsp;2.0 I built the music generation, audio utilities and singing-score
+            system; and UCL Yellow Pages taught me how to ship a secure, multi-user Django app as
+            part of a team.
+          </p>
+      </div>
+      <aside class="glance" aria-label="At a glance">
+        <h3>At a glance</h3>
+        <dl>
+          <div><dt>Based in</dt><dd>London, UK</dd></div>
+          <div><dt>Studying</dt><dd>Computer Science at UCL</dd></div>
+          <div><dt>Interned at</dt><dd>Arm, GPU build team (2026)</dd></div>
+          <div><dt>In production</dt><dd>Profili at ElektroLab, 1+ year</dd></div>
+          <div><dt>On stage</dt><dd>ReadingStar&nbsp;2.0 at Bett&nbsp;2026</dd></div>
+        </dl>
+        <a class="btn btn-ghost" href="aboutme.html">Skills &amp; experience</a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="cta-strip" aria-labelledby="cta-title">
+    <div class="container">
+      <div>
+        <h2 id="cta-title">Have a project in mind?</h2>
+        <p>I&rsquo;m always happy to talk about software, optimisation or anything on this site.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="mailto:stefanov.marko420@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> Email me</a>
+        <a class="btn btn-ghost" href="contact.html">All contact links</a>
       </div>
     </div>
-
   </section>
+</main>
 
-  <section class="banner-section">
-    <div class="banner-text">
-      MARKO<br>STEFANOV
+<footer class="site-footer">
+  <div class="container">
+    <div>
+      <a class="footer-brand" href="index.html">The Stefanov Herald</a>
+      <p>&copy; <span data-year>2026</span> Marko Stefanov &middot; London, UK</p>
     </div>
-  </section>
-
-  <section class="about-section" id="about">
-    <img class="about-image" src="/data/marko-stefanov.jpg">
-    <div class="about-content">
-      <h2>About</h2>
-      <p>
-        Welcome to my portfolio. I'm a creative professional based in London,
-        specialising software development, innovative problem-solving, and consulting.
-        With years of coding experience, I've worked on diverse projects
-        ranging from web applications, embedded systems, and Windows desktop applications.
-      </p>
-      <p>
-        My approach combines technical excellence with creative vision, ensuring
-        that every project not only meets but exceeds expectations. I believe in
-        the power of good design to transform experiences and create meaningful
-        connections.
-      </p>
-      <p>
-        This portfolio showcases a selection of my recent work, highlighting the
-        breadth and depth of my capabilities across different mediums and industries.
-      </p>
-    </div>
-  </section>
-
-  <section class="links-section" id="contact">
-    <div class="links-grid">
-      <a href="mailto:stefanov.marko420@gmail.com" class="link-item" aria-label="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-
-      <a href="https://github.com/MarkoStefanov" class="link-item" target="_blank"
-         aria-label="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-
-      <a href="https://linkedin.com/in/markostefanov" class="link-item" target="_blank"
-         aria-label="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-
-      <a href="https://instagram.com/stefanovmarko_" class="link-item" target="_blank"
-         aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2026 Marko Stefanov. All rights reserved.</p>
-    <p>London, UK</p>
-  </footer>
-</div>
-<script>
-  const menuIcon = document.getElementById('menuIcon');
-  const menuOverlay = document.getElementById('menuOverlay');
-  const menuBackdrop = document.getElementById('menuBackdrop');
-  const menuLinks = document.querySelectorAll('.menu-link');
-
-  // Toggle menu
-  menuIcon.addEventListener('click', () => {
-      menuIcon.classList.toggle('active');
-      menuOverlay.classList.toggle('active');
-      menuBackdrop.classList.toggle('active');
-  });
-
-  // Close menu when clicking on a link
-  menuLinks.forEach(link => {
-  link.addEventListener('click', (e) => {
-      const targetId = link.getAttribute('href');
-
-      // 1. Always close the menu regardless of what was clicked
-      menuIcon.classList.remove('active');
-      menuOverlay.classList.remove('active');
-      menuBackdrop.classList.remove('active');
-
-      // 2. Only prevent default (and scroll) if it's an internal anchor link
-      if (targetId.startsWith('#')) {
-          e.preventDefault();
-
-          const targetSection = document.querySelector(targetId);
-          if (targetSection) {
-              // Smooth scroll to section
-              setTimeout(() => {
-                  targetSection.scrollIntoView({
-                      behavior: 'smooth',
-                      block: 'start'
-                  });
-              }, 300);
-          }
-      }
-  });
-});
-</script>
+    <ul class="social">
+      <li><a href="mailto:stefanov.marko420@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a></li>
+      <li><a href="https://github.com/MarkoStefanov" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+      <li><a href="https://linkedin.com/in/markostefanov" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a></li>
+      <li><a href="https://instagram.com/stefanovmarko_" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+    </ul>
+  </div>
+</footer>
 </body>
 </html>
