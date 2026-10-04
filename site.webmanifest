@@ -1,0 +1,11 @@
+{
+  "name": "Marko Stefanov",
+  "short_name": "Marko Stefanov",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#b23a2e",
+  "background_color": "#f4f0e6",
+  "display": "browser"
+}

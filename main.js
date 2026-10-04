@@ -1,4 +1,4 @@
-// Shared behaviour for every page of The Stefanov Herald.
+// Shared behaviour for every page of the site.
 (() => {
   const body = document.body;
   const header = document.querySelector('.site-header');
